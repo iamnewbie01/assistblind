@@ -1,0 +1,306 @@
+2025-03-15 19:17:27 error: GraphQL error Variable "$input" got invalid value { fullName: "Aryan Maheshwari", phoneNumber: "9136086542", emergencyContactName: "Deeksha Maheshwari", emergencyContact: "9760212007", touchId: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoYFwZGu29rLs5W+03W7xjyiSBW7k6vKTt7uGbA+bXgArW5/9OTKruAN9tdP5+7bzA6escthJMRCGCP2nLnt3AhJ9/N1duBE7Pc1nJzEA6RyLIJU0ndQox8eUFwgSqURxXNy/ptyiSOCKR0BbMSR6R3BvWx0E4lCq0x27QW7pnuwjT/FNUfZAiAbqONraUvBu39QeIFM/V8GqVvv6pimParyqsyxutUoEewt0ctr6GJfEM/hxJ1v2X44pere4x/JS3Zql107CMjNK2FOBbk1Zcj+URGv6MqXQKwdvXsXx1cb7KaZeohE0rUKgHc5eqDAmcopRgPIlqA7PNn9LqISynwIDAQAB" }; Field "name" of required type "String!" was not provided. {
+  "locations": [
+    {
+      "line": 1,
+      "column": 23
+    }
+  ],
+  "extensions": {
+    "code": "BAD_USER_INPUT"
+  },
+  "stack": "GraphQLError: Field \"name\" of required type \"String!\" was not provided.\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:108:13)\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:49:14)\n    at coerceInputValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:32:10)\n    at coerceVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:132:69)\n    at getVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:45:21)\n    at buildExecutionContext (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:280:63)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:116:22)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)"
+}
+2025-03-15 19:17:27 error: GraphQL error Variable "$input" got invalid value { fullName: "Aryan Maheshwari", phoneNumber: "9136086542", emergencyContactName: "Deeksha Maheshwari", emergencyContact: "9760212007", touchId: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoYFwZGu29rLs5W+03W7xjyiSBW7k6vKTt7uGbA+bXgArW5/9OTKruAN9tdP5+7bzA6escthJMRCGCP2nLnt3AhJ9/N1duBE7Pc1nJzEA6RyLIJU0ndQox8eUFwgSqURxXNy/ptyiSOCKR0BbMSR6R3BvWx0E4lCq0x27QW7pnuwjT/FNUfZAiAbqONraUvBu39QeIFM/V8GqVvv6pimParyqsyxutUoEewt0ctr6GJfEM/hxJ1v2X44pere4x/JS3Zql107CMjNK2FOBbk1Zcj+URGv6MqXQKwdvXsXx1cb7KaZeohE0rUKgHc5eqDAmcopRgPIlqA7PNn9LqISynwIDAQAB" }; Field "contactNumber" of required type "String!" was not provided. {
+  "locations": [
+    {
+      "line": 1,
+      "column": 23
+    }
+  ],
+  "extensions": {
+    "code": "BAD_USER_INPUT"
+  },
+  "stack": "GraphQLError: Field \"contactNumber\" of required type \"String!\" was not provided.\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:108:13)\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:49:14)\n    at coerceInputValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:32:10)\n    at coerceVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:132:69)\n    at getVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:45:21)\n    at buildExecutionContext (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:280:63)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:116:22)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)"
+}
+2025-03-15 19:17:27 error: GraphQL error Variable "$input" got invalid value { fullName: "Aryan Maheshwari", phoneNumber: "9136086542", emergencyContactName: "Deeksha Maheshwari", emergencyContact: "9760212007", touchId: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoYFwZGu29rLs5W+03W7xjyiSBW7k6vKTt7uGbA+bXgArW5/9OTKruAN9tdP5+7bzA6escthJMRCGCP2nLnt3AhJ9/N1duBE7Pc1nJzEA6RyLIJU0ndQox8eUFwgSqURxXNy/ptyiSOCKR0BbMSR6R3BvWx0E4lCq0x27QW7pnuwjT/FNUfZAiAbqONraUvBu39QeIFM/V8GqVvv6pimParyqsyxutUoEewt0ctr6GJfEM/hxJ1v2X44pere4x/JS3Zql107CMjNK2FOBbk1Zcj+URGv6MqXQKwdvXsXx1cb7KaZeohE0rUKgHc5eqDAmcopRgPIlqA7PNn9LqISynwIDAQAB" }; Field "emergencyName" of required type "String!" was not provided. {
+  "locations": [
+    {
+      "line": 1,
+      "column": 23
+    }
+  ],
+  "extensions": {
+    "code": "BAD_USER_INPUT"
+  },
+  "stack": "GraphQLError: Field \"emergencyName\" of required type \"String!\" was not provided.\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:108:13)\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:49:14)\n    at coerceInputValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:32:10)\n    at coerceVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:132:69)\n    at getVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:45:21)\n    at buildExecutionContext (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:280:63)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:116:22)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)"
+}
+2025-03-15 19:17:27 error: GraphQL error Variable "$input" got invalid value { fullName: "Aryan Maheshwari", phoneNumber: "9136086542", emergencyContactName: "Deeksha Maheshwari", emergencyContact: "9760212007", touchId: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoYFwZGu29rLs5W+03W7xjyiSBW7k6vKTt7uGbA+bXgArW5/9OTKruAN9tdP5+7bzA6escthJMRCGCP2nLnt3AhJ9/N1duBE7Pc1nJzEA6RyLIJU0ndQox8eUFwgSqURxXNy/ptyiSOCKR0BbMSR6R3BvWx0E4lCq0x27QW7pnuwjT/FNUfZAiAbqONraUvBu39QeIFM/V8GqVvv6pimParyqsyxutUoEewt0ctr6GJfEM/hxJ1v2X44pere4x/JS3Zql107CMjNK2FOBbk1Zcj+URGv6MqXQKwdvXsXx1cb7KaZeohE0rUKgHc5eqDAmcopRgPIlqA7PNn9LqISynwIDAQAB" }; Field "fullName" is not defined by type "RegisterUserInput". Did you mean "name"? {
+  "locations": [
+    {
+      "line": 1,
+      "column": 23
+    }
+  ],
+  "extensions": {
+    "code": "BAD_USER_INPUT"
+  },
+  "stack": "GraphQLError: Field \"fullName\" is not defined by type \"RegisterUserInput\". Did you mean \"name\"?\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:134:11)\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:49:14)\n    at coerceInputValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:32:10)\n    at coerceVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:132:69)\n    at getVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:45:21)\n    at buildExecutionContext (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:280:63)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:116:22)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)"
+}
+2025-03-15 19:17:27 error: GraphQL error Variable "$input" got invalid value { fullName: "Aryan Maheshwari", phoneNumber: "9136086542", emergencyContactName: "Deeksha Maheshwari", emergencyContact: "9760212007", touchId: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoYFwZGu29rLs5W+03W7xjyiSBW7k6vKTt7uGbA+bXgArW5/9OTKruAN9tdP5+7bzA6escthJMRCGCP2nLnt3AhJ9/N1duBE7Pc1nJzEA6RyLIJU0ndQox8eUFwgSqURxXNy/ptyiSOCKR0BbMSR6R3BvWx0E4lCq0x27QW7pnuwjT/FNUfZAiAbqONraUvBu39QeIFM/V8GqVvv6pimParyqsyxutUoEewt0ctr6GJfEM/hxJ1v2X44pere4x/JS3Zql107CMjNK2FOBbk1Zcj+URGv6MqXQKwdvXsXx1cb7KaZeohE0rUKgHc5eqDAmcopRgPIlqA7PNn9LqISynwIDAQAB" }; Field "phoneNumber" is not defined by type "RegisterUserInput". {
+  "locations": [
+    {
+      "line": 1,
+      "column": 23
+    }
+  ],
+  "extensions": {
+    "code": "BAD_USER_INPUT"
+  },
+  "stack": "GraphQLError: Field \"phoneNumber\" is not defined by type \"RegisterUserInput\".\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:134:11)\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:49:14)\n    at coerceInputValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:32:10)\n    at coerceVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:132:69)\n    at getVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:45:21)\n    at buildExecutionContext (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:280:63)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:116:22)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)"
+}
+2025-03-15 19:17:27 error: GraphQL error Variable "$input" got invalid value { fullName: "Aryan Maheshwari", phoneNumber: "9136086542", emergencyContactName: "Deeksha Maheshwari", emergencyContact: "9760212007", touchId: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoYFwZGu29rLs5W+03W7xjyiSBW7k6vKTt7uGbA+bXgArW5/9OTKruAN9tdP5+7bzA6escthJMRCGCP2nLnt3AhJ9/N1duBE7Pc1nJzEA6RyLIJU0ndQox8eUFwgSqURxXNy/ptyiSOCKR0BbMSR6R3BvWx0E4lCq0x27QW7pnuwjT/FNUfZAiAbqONraUvBu39QeIFM/V8GqVvv6pimParyqsyxutUoEewt0ctr6GJfEM/hxJ1v2X44pere4x/JS3Zql107CMjNK2FOBbk1Zcj+URGv6MqXQKwdvXsXx1cb7KaZeohE0rUKgHc5eqDAmcopRgPIlqA7PNn9LqISynwIDAQAB" }; Field "emergencyContactName" is not defined by type "RegisterUserInput". Did you mean "emergencyContact" or "emergencyName"? {
+  "locations": [
+    {
+      "line": 1,
+      "column": 23
+    }
+  ],
+  "extensions": {
+    "code": "BAD_USER_INPUT"
+  },
+  "stack": "GraphQLError: Field \"emergencyContactName\" is not defined by type \"RegisterUserInput\". Did you mean \"emergencyContact\" or \"emergencyName\"?\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:134:11)\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:49:14)\n    at coerceInputValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:32:10)\n    at coerceVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:132:69)\n    at getVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:45:21)\n    at buildExecutionContext (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:280:63)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:116:22)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)"
+}
+2025-03-15 19:19:29 error: GraphQL error Variable "$input" got invalid value { fullName: "Aryan Maheshwari", phoneNumber: "9136086542", emergencyContactName: "Deeksha Maheshwari", emergencyContact: "9760212007", touchId: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmPmExmVJSq152fju81gJvlWN5JPgX7W/WRg9ufwtNB7NDRQ0JZ8RE3ZQkorzE9NRDsyT0fdilrlRdYcpM2ngCfWngA/bSA427o9LqgqskrbweJlY1lzAQSEtRoG2NZPO8z/nNosxCzSGM1zSXodwJ7iCUAkQfnXKTQEukaGg52HQiUx4bberlS31qgQP6cw9pxZcRic+Y0UMEsY/IzKZN1B8fNh+W0mayBA2q1v1mJKQi8fNuMm8bhYkgIgCKk9z6gx0/v7qZwynf9ywAByMMKCtCThgLmPJ/qTc5bu1gbNT8WLIt0GI//QNlGDhzyF3a2wdYAIQYkjOf8/IukP6eQIDAQAB" }; Field "name" of required type "String!" was not provided. {
+  "locations": [
+    {
+      "line": 1,
+      "column": 23
+    }
+  ],
+  "extensions": {
+    "code": "BAD_USER_INPUT"
+  },
+  "stack": "GraphQLError: Field \"name\" of required type \"String!\" was not provided.\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:108:13)\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:49:14)\n    at coerceInputValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:32:10)\n    at coerceVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:132:69)\n    at getVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:45:21)\n    at buildExecutionContext (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:280:63)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:116:22)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)"
+}
+2025-03-15 19:19:29 error: GraphQL error Variable "$input" got invalid value { fullName: "Aryan Maheshwari", phoneNumber: "9136086542", emergencyContactName: "Deeksha Maheshwari", emergencyContact: "9760212007", touchId: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmPmExmVJSq152fju81gJvlWN5JPgX7W/WRg9ufwtNB7NDRQ0JZ8RE3ZQkorzE9NRDsyT0fdilrlRdYcpM2ngCfWngA/bSA427o9LqgqskrbweJlY1lzAQSEtRoG2NZPO8z/nNosxCzSGM1zSXodwJ7iCUAkQfnXKTQEukaGg52HQiUx4bberlS31qgQP6cw9pxZcRic+Y0UMEsY/IzKZN1B8fNh+W0mayBA2q1v1mJKQi8fNuMm8bhYkgIgCKk9z6gx0/v7qZwynf9ywAByMMKCtCThgLmPJ/qTc5bu1gbNT8WLIt0GI//QNlGDhzyF3a2wdYAIQYkjOf8/IukP6eQIDAQAB" }; Field "contactNumber" of required type "String!" was not provided. {
+  "locations": [
+    {
+      "line": 1,
+      "column": 23
+    }
+  ],
+  "extensions": {
+    "code": "BAD_USER_INPUT"
+  },
+  "stack": "GraphQLError: Field \"contactNumber\" of required type \"String!\" was not provided.\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:108:13)\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:49:14)\n    at coerceInputValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:32:10)\n    at coerceVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:132:69)\n    at getVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:45:21)\n    at buildExecutionContext (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:280:63)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:116:22)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)"
+}
+2025-03-15 19:19:29 error: GraphQL error Variable "$input" got invalid value { fullName: "Aryan Maheshwari", phoneNumber: "9136086542", emergencyContactName: "Deeksha Maheshwari", emergencyContact: "9760212007", touchId: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmPmExmVJSq152fju81gJvlWN5JPgX7W/WRg9ufwtNB7NDRQ0JZ8RE3ZQkorzE9NRDsyT0fdilrlRdYcpM2ngCfWngA/bSA427o9LqgqskrbweJlY1lzAQSEtRoG2NZPO8z/nNosxCzSGM1zSXodwJ7iCUAkQfnXKTQEukaGg52HQiUx4bberlS31qgQP6cw9pxZcRic+Y0UMEsY/IzKZN1B8fNh+W0mayBA2q1v1mJKQi8fNuMm8bhYkgIgCKk9z6gx0/v7qZwynf9ywAByMMKCtCThgLmPJ/qTc5bu1gbNT8WLIt0GI//QNlGDhzyF3a2wdYAIQYkjOf8/IukP6eQIDAQAB" }; Field "emergencyName" of required type "String!" was not provided. {
+  "locations": [
+    {
+      "line": 1,
+      "column": 23
+    }
+  ],
+  "extensions": {
+    "code": "BAD_USER_INPUT"
+  },
+  "stack": "GraphQLError: Field \"emergencyName\" of required type \"String!\" was not provided.\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:108:13)\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:49:14)\n    at coerceInputValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:32:10)\n    at coerceVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:132:69)\n    at getVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:45:21)\n    at buildExecutionContext (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:280:63)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:116:22)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)"
+}
+2025-03-15 19:19:29 error: GraphQL error Variable "$input" got invalid value { fullName: "Aryan Maheshwari", phoneNumber: "9136086542", emergencyContactName: "Deeksha Maheshwari", emergencyContact: "9760212007", touchId: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmPmExmVJSq152fju81gJvlWN5JPgX7W/WRg9ufwtNB7NDRQ0JZ8RE3ZQkorzE9NRDsyT0fdilrlRdYcpM2ngCfWngA/bSA427o9LqgqskrbweJlY1lzAQSEtRoG2NZPO8z/nNosxCzSGM1zSXodwJ7iCUAkQfnXKTQEukaGg52HQiUx4bberlS31qgQP6cw9pxZcRic+Y0UMEsY/IzKZN1B8fNh+W0mayBA2q1v1mJKQi8fNuMm8bhYkgIgCKk9z6gx0/v7qZwynf9ywAByMMKCtCThgLmPJ/qTc5bu1gbNT8WLIt0GI//QNlGDhzyF3a2wdYAIQYkjOf8/IukP6eQIDAQAB" }; Field "fullName" is not defined by type "RegisterUserInput". Did you mean "name"? {
+  "locations": [
+    {
+      "line": 1,
+      "column": 23
+    }
+  ],
+  "extensions": {
+    "code": "BAD_USER_INPUT"
+  },
+  "stack": "GraphQLError: Field \"fullName\" is not defined by type \"RegisterUserInput\". Did you mean \"name\"?\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:134:11)\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:49:14)\n    at coerceInputValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:32:10)\n    at coerceVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:132:69)\n    at getVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:45:21)\n    at buildExecutionContext (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:280:63)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:116:22)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)"
+}
+2025-03-15 19:19:29 error: GraphQL error Variable "$input" got invalid value { fullName: "Aryan Maheshwari", phoneNumber: "9136086542", emergencyContactName: "Deeksha Maheshwari", emergencyContact: "9760212007", touchId: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmPmExmVJSq152fju81gJvlWN5JPgX7W/WRg9ufwtNB7NDRQ0JZ8RE3ZQkorzE9NRDsyT0fdilrlRdYcpM2ngCfWngA/bSA427o9LqgqskrbweJlY1lzAQSEtRoG2NZPO8z/nNosxCzSGM1zSXodwJ7iCUAkQfnXKTQEukaGg52HQiUx4bberlS31qgQP6cw9pxZcRic+Y0UMEsY/IzKZN1B8fNh+W0mayBA2q1v1mJKQi8fNuMm8bhYkgIgCKk9z6gx0/v7qZwynf9ywAByMMKCtCThgLmPJ/qTc5bu1gbNT8WLIt0GI//QNlGDhzyF3a2wdYAIQYkjOf8/IukP6eQIDAQAB" }; Field "phoneNumber" is not defined by type "RegisterUserInput". {
+  "locations": [
+    {
+      "line": 1,
+      "column": 23
+    }
+  ],
+  "extensions": {
+    "code": "BAD_USER_INPUT"
+  },
+  "stack": "GraphQLError: Field \"phoneNumber\" is not defined by type \"RegisterUserInput\".\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:134:11)\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:49:14)\n    at coerceInputValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:32:10)\n    at coerceVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:132:69)\n    at getVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:45:21)\n    at buildExecutionContext (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:280:63)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:116:22)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)"
+}
+2025-03-15 19:19:29 error: GraphQL error Variable "$input" got invalid value { fullName: "Aryan Maheshwari", phoneNumber: "9136086542", emergencyContactName: "Deeksha Maheshwari", emergencyContact: "9760212007", touchId: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmPmExmVJSq152fju81gJvlWN5JPgX7W/WRg9ufwtNB7NDRQ0JZ8RE3ZQkorzE9NRDsyT0fdilrlRdYcpM2ngCfWngA/bSA427o9LqgqskrbweJlY1lzAQSEtRoG2NZPO8z/nNosxCzSGM1zSXodwJ7iCUAkQfnXKTQEukaGg52HQiUx4bberlS31qgQP6cw9pxZcRic+Y0UMEsY/IzKZN1B8fNh+W0mayBA2q1v1mJKQi8fNuMm8bhYkgIgCKk9z6gx0/v7qZwynf9ywAByMMKCtCThgLmPJ/qTc5bu1gbNT8WLIt0GI//QNlGDhzyF3a2wdYAIQYkjOf8/IukP6eQIDAQAB" }; Field "emergencyContactName" is not defined by type "RegisterUserInput". Did you mean "emergencyContact" or "emergencyName"? {
+  "locations": [
+    {
+      "line": 1,
+      "column": 23
+    }
+  ],
+  "extensions": {
+    "code": "BAD_USER_INPUT"
+  },
+  "stack": "GraphQLError: Field \"emergencyContactName\" is not defined by type \"RegisterUserInput\". Did you mean \"emergencyContact\" or \"emergencyName\"?\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:134:11)\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:49:14)\n    at coerceInputValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:32:10)\n    at coerceVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:132:69)\n    at getVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:45:21)\n    at buildExecutionContext (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:280:63)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:116:22)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)"
+}
+2025-03-15 19:50:34 error: GraphQL error Invalid biometric signature {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: Invalid biometric signature\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:62:15)"
+}
+2025-03-15 21:44:24 error: GraphQL error Invalid biometric signature {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: Invalid biometric signature\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:66:15)"
+}
+2025-03-16 23:40:43 error: GraphQL error Cannot query field "id" on type "Query". {
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "http": {
+      "status": 400,
+      "headers": {}
+    },
+    "code": "GRAPHQL_VALIDATION_FAILED"
+  },
+  "stack": "GraphQLError: Cannot query field \"id\" on type \"Query\".\n    at Object.Field (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/validation/rules/FieldsOnCorrectTypeRule.js:51:13)\n    at Object.enter (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/language/visitor.js:301:32)\n    at Object.enter (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/TypeInfo.js:391:27)\n    at visit (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/language/visitor.js:197:21)\n    at validate (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/validation/validate.js:91:24)\n    at processGraphQLRequest (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:246:40)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async internalExecuteOperation (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/ApolloServer.ts:1331:12)\n    at async runHttpQuery (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/runHttpQuery.ts:232:27)\n    at async runPotentiallyBatchedHttpQuery (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/httpBatching.ts:85:12)"
+}
+2025-03-16 23:42:54 error: GraphQL error You must be logged in {
+  "path": [
+    "getUserProfile"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: You must be logged in\n    at Object.getUserProfile (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/profile.ts:11:15)\n    at field.resolve (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/utils/schemaInstrumentation.ts:82:22)\n    at executeField (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:492:20)\n    at executeFields (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:414:22)\n    at executeOperation (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:344:14)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:136:20)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)\n    at async processGraphQLRequest (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:429:26)"
+}
+2025-03-17 01:23:37 error: GraphQL error Cannot return null for non-nullable field Query.healthCheck. {
+  "path": [
+    "healthCheck"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {},
+  "stack": "Error: Cannot return null for non-nullable field Query.healthCheck.\n    at completeValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:605:13)\n    at executeField (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:500:19)\n    at executeFields (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:414:22)\n    at executeOperation (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:344:14)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:136:20)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)\n    at async processGraphQLRequest (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:429:26)\n    at async internalExecuteOperation (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/ApolloServer.ts:1331:12)"
+}
+2025-03-17 01:29:30 error: GraphQL error Cannot return null for non-nullable field Query.healthCheck. {
+  "path": [
+    "healthCheck"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {},
+  "stack": "Error: Cannot return null for non-nullable field Query.healthCheck.\n    at completeValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:605:13)\n    at executeField (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:500:19)\n    at executeFields (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:414:22)\n    at executeOperation (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:344:14)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:136:20)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)\n    at async processGraphQLRequest (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:429:26)\n    at async internalExecuteOperation (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/ApolloServer.ts:1331:12)"
+}
+2025-03-17 02:14:58 error: GraphQL error User not found {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
+}
+2025-03-27 00:12:34 error: GraphQL error User not found {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
+}
+2025-03-27 00:12:40 error: GraphQL error User not found {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
+}
+2025-03-27 00:14:46 error: GraphQL error User not found {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
+}
+2025-03-27 00:16:29 error: GraphQL error User not found {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
+}

@@ -1,0 +1,163 @@
+/navigation-app
+├── /android                     # Android native code
+├── /ios                         # iOS native code
+├── /src
+│   ├── /api
+│   │   ├── apollo.ts            # Apollo Client setup
+│   │   ├── graphql.ts           # GraphQL client configuration
+│   │   └── /queries             # GraphQL queries and mutations
+│   │       ├── auth.ts          # Authentication related queries
+│   │       ├── navigation.ts    # Navigation related queries
+│   │       ├── profile.ts       # Profile related queries
+│   │       └── index.ts         # Export all queries
+│   │
+│   ├── /assets
+│   │   ├── /fonts               # Custom fonts
+│   │   ├── /images              # Images and icons
+│   │   └── /sounds              # Audio files for notifications
+│   │
+│   ├── /components
+│   │   ├── /common              # Reusable components
+│   │   │   ├── Button.tsx
+│   │   │   ├── Card.tsx
+│   │   │   ├── Header.tsx
+│   │   │   ├── LoadingIndicator.tsx
+│   │   │   ├── TextToSpeech.tsx
+│   │   │   ├── VoiceRecognition.tsx
+│   │   │   └── index.ts
+│   │   │
+│   │   ├── /navigation          # Navigation specific components
+│   │   │   ├── DirectionCard.tsx
+│   │   │   ├── LocationInput.tsx
+│   │   │   ├── MapView.tsx
+│   │   │   ├── NavigationInstructions.tsx
+│   │   │   └── index.ts
+│   │   │
+│   │   └── /profile             # Profile specific components
+│   │       ├── ProfileCard.tsx
+│   │       ├── SettingsItem.tsx
+│   │       └── index.ts
+│   │
+│   ├── /constants
+│   │   ├── colors.ts            # App color scheme
+│   │   ├── dimensions.ts        # Screen dimensions and spacing
+│   │   ├── routes.ts            # Route names
+│   │   └── strings.ts           # App text strings
+│   │
+│   ├── /context
+│   │   ├── AuthContext.tsx      # Authentication context
+│   │   ├── NavigationContext.tsx # Navigation state context
+│   │   └── ThemeContext.tsx     # Theme context for accessibility
+│   │
+│   ├── /hooks
+│   │   ├── useAccessibility.ts  # Custom hook for accessibility features
+│   │   ├── useGeolocation.ts    # Custom hook for location tracking
+│   │   ├── useNavigation.ts     # Custom hook for navigation logic
+│   │   ├── useSpeech.ts         # Custom hook for text-to-speech
+│   │   └── useVoiceRecognition.ts # Custom hook for voice commands
+│   │
+│   ├── /navigation
+│   │   ├── AppNavigator.tsx     # Main navigation container
+│   │   ├── AuthNavigator.tsx    # Authentication flow
+│   │   ├── MainNavigator.tsx    # Main app flow
+│   │   └── NavigationService.ts # Navigation utilities
+│   │
+│   ├── /screens
+│   │   ├── /auth
+│   │   │   ├── CreateAccountScreen.tsx
+│   │   │   ├── SplashScreen.tsx
+│   │   │   ├── WelcomeScreen.tsx
+│   │   │   └── index.ts
+│   │   │
+│   │   ├── /main
+│   │   │   ├── MainMenuScreen.tsx
+│   │   │   └── index.ts
+│   │   │
+│   │   ├── /navigation
+│   │   │   ├── IndoorNavigationScreen.tsx
+│   │   │   ├── OutdoorNavigation1Screen.tsx  # Route selection
+│   │   │   ├── OutdoorNavigation2Screen.tsx  # Navigation in progress
+│   │   │   ├── OutdoorNavigation3Screen.tsx  # Obstacle detection
+│   │   │   ├── OutdoorNavigation4Screen.tsx  # Arrival screen
+│   │   │   └── index.ts
+│   │   │
+│   │   └── /profile
+│   │       ├── EditProfileScreen.tsx
+│   │       ├── ProfileScreen.tsx
+│   │       └── index.ts
+│   │
+│   ├── /services
+│   │   ├── AccessibilityService.ts  # Accessibility helpers
+│   │   ├── GeocodingService.ts      # Address to coordinates conversion
+│   │   ├── LocationService.ts       # GPS and location tracking
+│   │   ├── NavigationService.ts     # Route calculation and guidance
+│   │   ├── SpeechService.ts         # Text-to-speech functionality
+│   │   └── VoiceRecognitionService.ts # Voice command processing
+│   │
+│   ├── /types
+│   │   ├── navigation.types.ts      # Navigation related types
+│   │   ├── profile.types.ts         # User profile types
+│   │   ├── route.types.ts           # Route and direction types
+│   │   └── index.ts                 # Export all types
+│   │
+│   ├── /utils
+│   │   ├── accessibility.ts         # Accessibility utilities
+│   │   ├── errorHandling.ts         # Error handling utilities
+│   │   ├── formatters.ts            # Data formatting utilities
+│   │   ├── permissions.ts           # Permission request utilities
+│   │   └── validators.ts            # Form validation utilities
+│   │
+│   ├── App.tsx                      # Root component
+│   └── index.ts                     # Entry point
+│
+├── /server                          # Backend code (separate from frontend)
+│   ├── /prisma
+│   │   ├── schema.prisma            # Prisma schema
+│   │   └── migrations/              # Database migrations
+│   │
+│   ├── /src
+│   │   ├── /api
+│   │   │   ├── /resolvers           # GraphQL resolvers
+│   │   │   │   ├── auth.ts
+│   │   │   │   ├── navigation.ts
+│   │   │   │   ├── profile.ts
+│   │   │   │   └── index.ts
+│   │   │   │
+│   │   │   ├── /typeDefs            # GraphQL type definitions
+│   │   │   │   ├── auth.ts
+│   │   │   │   ├── navigation.ts
+│   │   │   │   ├── profile.ts
+│   │   │   │   └── index.ts
+│   │   │   │
+│   │   │   └── schema.ts            # Combined GraphQL schema
+│   │   │
+│   │   ├── /config
+│   │   │   ├── database.ts          # Database configuration
+│   │   │   └── server.ts            # Server configuration
+│   │   │
+│   │   ├── /middleware
+│   │   │   ├── auth.ts              # Authentication middleware
+│   │   │   └── errorHandler.ts      # Error handling middleware
+│   │   │
+│   │   ├── /services
+│   │   │   ├── authService.ts       # Authentication service
+│   │   │   ├── navigationService.ts # Navigation service
+│   │   │   └── userService.ts       # User management service
+│   │   │
+│   │   ├── /utils
+│   │   │   ├── logger.ts            # Logging utility
+│   │   │   └── validators.ts        # Input validation
+│   │   │
+│   │   └── index.ts                 # Server entry point
+│   │
+│   ├── .env                         # Environment variables
+│   └── package.json                 # Backend dependencies
+│
+├── .env                             # Environment variables
+├── app.json                         # React Native app configuration
+├── babel.config.js                  # Babel configuration
+├── index.js                         # Entry point
+├── metro.config.js                  # Metro bundler configuration
+├── package.json                     # Frontend dependencies
+├── tsconfig.json                    # TypeScript configuration
+└── README.md                        # Project documentation

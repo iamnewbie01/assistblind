@@ -1,0 +1,612 @@
+2025-03-15 12:05:42 info: Database connected successfully 
+2025-03-15 12:05:42 info: Server running on port 5000 
+2025-03-15 12:05:42 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-15 12:05:42 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-15 12:10:28 info: Database connected successfully 
+2025-03-15 12:10:28 info: Server running on port 5000 
+2025-03-15 12:10:28 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-15 12:10:28 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-15 12:11:51 info: Database connected successfully 
+2025-03-15 12:11:51 info: Server running on port 5000 
+2025-03-15 12:11:51 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-15 12:11:51 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-15 12:15:50 info: Database connected successfully 
+2025-03-15 12:15:50 info: Server running on port 5000 
+2025-03-15 12:15:50 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-15 12:15:50 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-15 12:16:31 info: Client connected: y9AXQbwHah4TR9piAAAB 
+2025-03-15 17:55:37 info: Database connected successfully 
+2025-03-15 17:55:37 info: Server running on port 5000 
+2025-03-15 17:55:37 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-15 17:55:37 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-15 17:58:24 info: Database connected successfully 
+2025-03-15 17:58:25 info: Server running on port 5000 
+2025-03-15 17:58:25 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-15 17:58:25 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-15 18:16:54 info: Database connected successfully 
+2025-03-15 18:16:54 info: Server running on port 5000 
+2025-03-15 18:16:54 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-15 18:16:54 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-15 19:12:03 info: Database connected successfully 
+2025-03-15 19:12:03 info: Server running on port 5000 
+2025-03-15 19:12:03 info: GraphQL endpoint: http://192.168.29.206:5000/graphql 
+2025-03-15 19:12:03 info: WebSocket endpoint: ws://192.168.29.206:5000 
+2025-03-15 19:17:27 error: GraphQL error Variable "$input" got invalid value { fullName: "Aryan Maheshwari", phoneNumber: "9136086542", emergencyContactName: "Deeksha Maheshwari", emergencyContact: "9760212007", touchId: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoYFwZGu29rLs5W+03W7xjyiSBW7k6vKTt7uGbA+bXgArW5/9OTKruAN9tdP5+7bzA6escthJMRCGCP2nLnt3AhJ9/N1duBE7Pc1nJzEA6RyLIJU0ndQox8eUFwgSqURxXNy/ptyiSOCKR0BbMSR6R3BvWx0E4lCq0x27QW7pnuwjT/FNUfZAiAbqONraUvBu39QeIFM/V8GqVvv6pimParyqsyxutUoEewt0ctr6GJfEM/hxJ1v2X44pere4x/JS3Zql107CMjNK2FOBbk1Zcj+URGv6MqXQKwdvXsXx1cb7KaZeohE0rUKgHc5eqDAmcopRgPIlqA7PNn9LqISynwIDAQAB" }; Field "name" of required type "String!" was not provided. {
+  "locations": [
+    {
+      "line": 1,
+      "column": 23
+    }
+  ],
+  "extensions": {
+    "code": "BAD_USER_INPUT"
+  },
+  "stack": "GraphQLError: Field \"name\" of required type \"String!\" was not provided.\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:108:13)\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:49:14)\n    at coerceInputValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:32:10)\n    at coerceVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:132:69)\n    at getVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:45:21)\n    at buildExecutionContext (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:280:63)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:116:22)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)"
+}
+2025-03-15 19:17:27 error: GraphQL error Variable "$input" got invalid value { fullName: "Aryan Maheshwari", phoneNumber: "9136086542", emergencyContactName: "Deeksha Maheshwari", emergencyContact: "9760212007", touchId: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoYFwZGu29rLs5W+03W7xjyiSBW7k6vKTt7uGbA+bXgArW5/9OTKruAN9tdP5+7bzA6escthJMRCGCP2nLnt3AhJ9/N1duBE7Pc1nJzEA6RyLIJU0ndQox8eUFwgSqURxXNy/ptyiSOCKR0BbMSR6R3BvWx0E4lCq0x27QW7pnuwjT/FNUfZAiAbqONraUvBu39QeIFM/V8GqVvv6pimParyqsyxutUoEewt0ctr6GJfEM/hxJ1v2X44pere4x/JS3Zql107CMjNK2FOBbk1Zcj+URGv6MqXQKwdvXsXx1cb7KaZeohE0rUKgHc5eqDAmcopRgPIlqA7PNn9LqISynwIDAQAB" }; Field "contactNumber" of required type "String!" was not provided. {
+  "locations": [
+    {
+      "line": 1,
+      "column": 23
+    }
+  ],
+  "extensions": {
+    "code": "BAD_USER_INPUT"
+  },
+  "stack": "GraphQLError: Field \"contactNumber\" of required type \"String!\" was not provided.\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:108:13)\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:49:14)\n    at coerceInputValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:32:10)\n    at coerceVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:132:69)\n    at getVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:45:21)\n    at buildExecutionContext (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:280:63)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:116:22)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)"
+}
+2025-03-15 19:17:27 error: GraphQL error Variable "$input" got invalid value { fullName: "Aryan Maheshwari", phoneNumber: "9136086542", emergencyContactName: "Deeksha Maheshwari", emergencyContact: "9760212007", touchId: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoYFwZGu29rLs5W+03W7xjyiSBW7k6vKTt7uGbA+bXgArW5/9OTKruAN9tdP5+7bzA6escthJMRCGCP2nLnt3AhJ9/N1duBE7Pc1nJzEA6RyLIJU0ndQox8eUFwgSqURxXNy/ptyiSOCKR0BbMSR6R3BvWx0E4lCq0x27QW7pnuwjT/FNUfZAiAbqONraUvBu39QeIFM/V8GqVvv6pimParyqsyxutUoEewt0ctr6GJfEM/hxJ1v2X44pere4x/JS3Zql107CMjNK2FOBbk1Zcj+URGv6MqXQKwdvXsXx1cb7KaZeohE0rUKgHc5eqDAmcopRgPIlqA7PNn9LqISynwIDAQAB" }; Field "emergencyName" of required type "String!" was not provided. {
+  "locations": [
+    {
+      "line": 1,
+      "column": 23
+    }
+  ],
+  "extensions": {
+    "code": "BAD_USER_INPUT"
+  },
+  "stack": "GraphQLError: Field \"emergencyName\" of required type \"String!\" was not provided.\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:108:13)\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:49:14)\n    at coerceInputValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:32:10)\n    at coerceVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:132:69)\n    at getVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:45:21)\n    at buildExecutionContext (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:280:63)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:116:22)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)"
+}
+2025-03-15 19:17:27 error: GraphQL error Variable "$input" got invalid value { fullName: "Aryan Maheshwari", phoneNumber: "9136086542", emergencyContactName: "Deeksha Maheshwari", emergencyContact: "9760212007", touchId: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoYFwZGu29rLs5W+03W7xjyiSBW7k6vKTt7uGbA+bXgArW5/9OTKruAN9tdP5+7bzA6escthJMRCGCP2nLnt3AhJ9/N1duBE7Pc1nJzEA6RyLIJU0ndQox8eUFwgSqURxXNy/ptyiSOCKR0BbMSR6R3BvWx0E4lCq0x27QW7pnuwjT/FNUfZAiAbqONraUvBu39QeIFM/V8GqVvv6pimParyqsyxutUoEewt0ctr6GJfEM/hxJ1v2X44pere4x/JS3Zql107CMjNK2FOBbk1Zcj+URGv6MqXQKwdvXsXx1cb7KaZeohE0rUKgHc5eqDAmcopRgPIlqA7PNn9LqISynwIDAQAB" }; Field "fullName" is not defined by type "RegisterUserInput". Did you mean "name"? {
+  "locations": [
+    {
+      "line": 1,
+      "column": 23
+    }
+  ],
+  "extensions": {
+    "code": "BAD_USER_INPUT"
+  },
+  "stack": "GraphQLError: Field \"fullName\" is not defined by type \"RegisterUserInput\". Did you mean \"name\"?\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:134:11)\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:49:14)\n    at coerceInputValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:32:10)\n    at coerceVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:132:69)\n    at getVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:45:21)\n    at buildExecutionContext (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:280:63)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:116:22)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)"
+}
+2025-03-15 19:17:27 error: GraphQL error Variable "$input" got invalid value { fullName: "Aryan Maheshwari", phoneNumber: "9136086542", emergencyContactName: "Deeksha Maheshwari", emergencyContact: "9760212007", touchId: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoYFwZGu29rLs5W+03W7xjyiSBW7k6vKTt7uGbA+bXgArW5/9OTKruAN9tdP5+7bzA6escthJMRCGCP2nLnt3AhJ9/N1duBE7Pc1nJzEA6RyLIJU0ndQox8eUFwgSqURxXNy/ptyiSOCKR0BbMSR6R3BvWx0E4lCq0x27QW7pnuwjT/FNUfZAiAbqONraUvBu39QeIFM/V8GqVvv6pimParyqsyxutUoEewt0ctr6GJfEM/hxJ1v2X44pere4x/JS3Zql107CMjNK2FOBbk1Zcj+URGv6MqXQKwdvXsXx1cb7KaZeohE0rUKgHc5eqDAmcopRgPIlqA7PNn9LqISynwIDAQAB" }; Field "phoneNumber" is not defined by type "RegisterUserInput". {
+  "locations": [
+    {
+      "line": 1,
+      "column": 23
+    }
+  ],
+  "extensions": {
+    "code": "BAD_USER_INPUT"
+  },
+  "stack": "GraphQLError: Field \"phoneNumber\" is not defined by type \"RegisterUserInput\".\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:134:11)\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:49:14)\n    at coerceInputValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:32:10)\n    at coerceVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:132:69)\n    at getVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:45:21)\n    at buildExecutionContext (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:280:63)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:116:22)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)"
+}
+2025-03-15 19:17:27 error: GraphQL error Variable "$input" got invalid value { fullName: "Aryan Maheshwari", phoneNumber: "9136086542", emergencyContactName: "Deeksha Maheshwari", emergencyContact: "9760212007", touchId: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoYFwZGu29rLs5W+03W7xjyiSBW7k6vKTt7uGbA+bXgArW5/9OTKruAN9tdP5+7bzA6escthJMRCGCP2nLnt3AhJ9/N1duBE7Pc1nJzEA6RyLIJU0ndQox8eUFwgSqURxXNy/ptyiSOCKR0BbMSR6R3BvWx0E4lCq0x27QW7pnuwjT/FNUfZAiAbqONraUvBu39QeIFM/V8GqVvv6pimParyqsyxutUoEewt0ctr6GJfEM/hxJ1v2X44pere4x/JS3Zql107CMjNK2FOBbk1Zcj+URGv6MqXQKwdvXsXx1cb7KaZeohE0rUKgHc5eqDAmcopRgPIlqA7PNn9LqISynwIDAQAB" }; Field "emergencyContactName" is not defined by type "RegisterUserInput". Did you mean "emergencyContact" or "emergencyName"? {
+  "locations": [
+    {
+      "line": 1,
+      "column": 23
+    }
+  ],
+  "extensions": {
+    "code": "BAD_USER_INPUT"
+  },
+  "stack": "GraphQLError: Field \"emergencyContactName\" is not defined by type \"RegisterUserInput\". Did you mean \"emergencyContact\" or \"emergencyName\"?\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:134:11)\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:49:14)\n    at coerceInputValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:32:10)\n    at coerceVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:132:69)\n    at getVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:45:21)\n    at buildExecutionContext (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:280:63)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:116:22)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)"
+}
+2025-03-15 19:19:29 error: GraphQL error Variable "$input" got invalid value { fullName: "Aryan Maheshwari", phoneNumber: "9136086542", emergencyContactName: "Deeksha Maheshwari", emergencyContact: "9760212007", touchId: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmPmExmVJSq152fju81gJvlWN5JPgX7W/WRg9ufwtNB7NDRQ0JZ8RE3ZQkorzE9NRDsyT0fdilrlRdYcpM2ngCfWngA/bSA427o9LqgqskrbweJlY1lzAQSEtRoG2NZPO8z/nNosxCzSGM1zSXodwJ7iCUAkQfnXKTQEukaGg52HQiUx4bberlS31qgQP6cw9pxZcRic+Y0UMEsY/IzKZN1B8fNh+W0mayBA2q1v1mJKQi8fNuMm8bhYkgIgCKk9z6gx0/v7qZwynf9ywAByMMKCtCThgLmPJ/qTc5bu1gbNT8WLIt0GI//QNlGDhzyF3a2wdYAIQYkjOf8/IukP6eQIDAQAB" }; Field "name" of required type "String!" was not provided. {
+  "locations": [
+    {
+      "line": 1,
+      "column": 23
+    }
+  ],
+  "extensions": {
+    "code": "BAD_USER_INPUT"
+  },
+  "stack": "GraphQLError: Field \"name\" of required type \"String!\" was not provided.\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:108:13)\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:49:14)\n    at coerceInputValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:32:10)\n    at coerceVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:132:69)\n    at getVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:45:21)\n    at buildExecutionContext (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:280:63)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:116:22)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)"
+}
+2025-03-15 19:19:29 error: GraphQL error Variable "$input" got invalid value { fullName: "Aryan Maheshwari", phoneNumber: "9136086542", emergencyContactName: "Deeksha Maheshwari", emergencyContact: "9760212007", touchId: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmPmExmVJSq152fju81gJvlWN5JPgX7W/WRg9ufwtNB7NDRQ0JZ8RE3ZQkorzE9NRDsyT0fdilrlRdYcpM2ngCfWngA/bSA427o9LqgqskrbweJlY1lzAQSEtRoG2NZPO8z/nNosxCzSGM1zSXodwJ7iCUAkQfnXKTQEukaGg52HQiUx4bberlS31qgQP6cw9pxZcRic+Y0UMEsY/IzKZN1B8fNh+W0mayBA2q1v1mJKQi8fNuMm8bhYkgIgCKk9z6gx0/v7qZwynf9ywAByMMKCtCThgLmPJ/qTc5bu1gbNT8WLIt0GI//QNlGDhzyF3a2wdYAIQYkjOf8/IukP6eQIDAQAB" }; Field "contactNumber" of required type "String!" was not provided. {
+  "locations": [
+    {
+      "line": 1,
+      "column": 23
+    }
+  ],
+  "extensions": {
+    "code": "BAD_USER_INPUT"
+  },
+  "stack": "GraphQLError: Field \"contactNumber\" of required type \"String!\" was not provided.\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:108:13)\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:49:14)\n    at coerceInputValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:32:10)\n    at coerceVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:132:69)\n    at getVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:45:21)\n    at buildExecutionContext (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:280:63)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:116:22)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)"
+}
+2025-03-15 19:19:29 error: GraphQL error Variable "$input" got invalid value { fullName: "Aryan Maheshwari", phoneNumber: "9136086542", emergencyContactName: "Deeksha Maheshwari", emergencyContact: "9760212007", touchId: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmPmExmVJSq152fju81gJvlWN5JPgX7W/WRg9ufwtNB7NDRQ0JZ8RE3ZQkorzE9NRDsyT0fdilrlRdYcpM2ngCfWngA/bSA427o9LqgqskrbweJlY1lzAQSEtRoG2NZPO8z/nNosxCzSGM1zSXodwJ7iCUAkQfnXKTQEukaGg52HQiUx4bberlS31qgQP6cw9pxZcRic+Y0UMEsY/IzKZN1B8fNh+W0mayBA2q1v1mJKQi8fNuMm8bhYkgIgCKk9z6gx0/v7qZwynf9ywAByMMKCtCThgLmPJ/qTc5bu1gbNT8WLIt0GI//QNlGDhzyF3a2wdYAIQYkjOf8/IukP6eQIDAQAB" }; Field "emergencyName" of required type "String!" was not provided. {
+  "locations": [
+    {
+      "line": 1,
+      "column": 23
+    }
+  ],
+  "extensions": {
+    "code": "BAD_USER_INPUT"
+  },
+  "stack": "GraphQLError: Field \"emergencyName\" of required type \"String!\" was not provided.\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:108:13)\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:49:14)\n    at coerceInputValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:32:10)\n    at coerceVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:132:69)\n    at getVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:45:21)\n    at buildExecutionContext (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:280:63)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:116:22)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)"
+}
+2025-03-15 19:19:29 error: GraphQL error Variable "$input" got invalid value { fullName: "Aryan Maheshwari", phoneNumber: "9136086542", emergencyContactName: "Deeksha Maheshwari", emergencyContact: "9760212007", touchId: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmPmExmVJSq152fju81gJvlWN5JPgX7W/WRg9ufwtNB7NDRQ0JZ8RE3ZQkorzE9NRDsyT0fdilrlRdYcpM2ngCfWngA/bSA427o9LqgqskrbweJlY1lzAQSEtRoG2NZPO8z/nNosxCzSGM1zSXodwJ7iCUAkQfnXKTQEukaGg52HQiUx4bberlS31qgQP6cw9pxZcRic+Y0UMEsY/IzKZN1B8fNh+W0mayBA2q1v1mJKQi8fNuMm8bhYkgIgCKk9z6gx0/v7qZwynf9ywAByMMKCtCThgLmPJ/qTc5bu1gbNT8WLIt0GI//QNlGDhzyF3a2wdYAIQYkjOf8/IukP6eQIDAQAB" }; Field "fullName" is not defined by type "RegisterUserInput". Did you mean "name"? {
+  "locations": [
+    {
+      "line": 1,
+      "column": 23
+    }
+  ],
+  "extensions": {
+    "code": "BAD_USER_INPUT"
+  },
+  "stack": "GraphQLError: Field \"fullName\" is not defined by type \"RegisterUserInput\". Did you mean \"name\"?\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:134:11)\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:49:14)\n    at coerceInputValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:32:10)\n    at coerceVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:132:69)\n    at getVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:45:21)\n    at buildExecutionContext (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:280:63)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:116:22)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)"
+}
+2025-03-15 19:19:29 error: GraphQL error Variable "$input" got invalid value { fullName: "Aryan Maheshwari", phoneNumber: "9136086542", emergencyContactName: "Deeksha Maheshwari", emergencyContact: "9760212007", touchId: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmPmExmVJSq152fju81gJvlWN5JPgX7W/WRg9ufwtNB7NDRQ0JZ8RE3ZQkorzE9NRDsyT0fdilrlRdYcpM2ngCfWngA/bSA427o9LqgqskrbweJlY1lzAQSEtRoG2NZPO8z/nNosxCzSGM1zSXodwJ7iCUAkQfnXKTQEukaGg52HQiUx4bberlS31qgQP6cw9pxZcRic+Y0UMEsY/IzKZN1B8fNh+W0mayBA2q1v1mJKQi8fNuMm8bhYkgIgCKk9z6gx0/v7qZwynf9ywAByMMKCtCThgLmPJ/qTc5bu1gbNT8WLIt0GI//QNlGDhzyF3a2wdYAIQYkjOf8/IukP6eQIDAQAB" }; Field "phoneNumber" is not defined by type "RegisterUserInput". {
+  "locations": [
+    {
+      "line": 1,
+      "column": 23
+    }
+  ],
+  "extensions": {
+    "code": "BAD_USER_INPUT"
+  },
+  "stack": "GraphQLError: Field \"phoneNumber\" is not defined by type \"RegisterUserInput\".\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:134:11)\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:49:14)\n    at coerceInputValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:32:10)\n    at coerceVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:132:69)\n    at getVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:45:21)\n    at buildExecutionContext (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:280:63)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:116:22)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)"
+}
+2025-03-15 19:19:29 error: GraphQL error Variable "$input" got invalid value { fullName: "Aryan Maheshwari", phoneNumber: "9136086542", emergencyContactName: "Deeksha Maheshwari", emergencyContact: "9760212007", touchId: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmPmExmVJSq152fju81gJvlWN5JPgX7W/WRg9ufwtNB7NDRQ0JZ8RE3ZQkorzE9NRDsyT0fdilrlRdYcpM2ngCfWngA/bSA427o9LqgqskrbweJlY1lzAQSEtRoG2NZPO8z/nNosxCzSGM1zSXodwJ7iCUAkQfnXKTQEukaGg52HQiUx4bberlS31qgQP6cw9pxZcRic+Y0UMEsY/IzKZN1B8fNh+W0mayBA2q1v1mJKQi8fNuMm8bhYkgIgCKk9z6gx0/v7qZwynf9ywAByMMKCtCThgLmPJ/qTc5bu1gbNT8WLIt0GI//QNlGDhzyF3a2wdYAIQYkjOf8/IukP6eQIDAQAB" }; Field "emergencyContactName" is not defined by type "RegisterUserInput". Did you mean "emergencyContact" or "emergencyName"? {
+  "locations": [
+    {
+      "line": 1,
+      "column": 23
+    }
+  ],
+  "extensions": {
+    "code": "BAD_USER_INPUT"
+  },
+  "stack": "GraphQLError: Field \"emergencyContactName\" is not defined by type \"RegisterUserInput\". Did you mean \"emergencyContact\" or \"emergencyName\"?\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:134:11)\n    at coerceInputValueImpl (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:49:14)\n    at coerceInputValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/coerceInputValue.js:32:10)\n    at coerceVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:132:69)\n    at getVariableValues (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/values.js:45:21)\n    at buildExecutionContext (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:280:63)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:116:22)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)"
+}
+2025-03-15 19:50:34 error: GraphQL error Invalid biometric signature {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: Invalid biometric signature\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:62:15)"
+}
+2025-03-15 21:38:46 info: Database connected successfully 
+2025-03-15 21:38:46 info: Server running on port 5000 
+2025-03-15 21:38:46 info: GraphQL endpoint: http://192.168.29.206:5000/graphql 
+2025-03-15 21:38:46 info: WebSocket endpoint: ws://192.168.29.206:5000 
+2025-03-15 21:44:24 error: GraphQL error Invalid biometric signature {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: Invalid biometric signature\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:66:15)"
+}
+2025-03-15 21:51:41 info: Database connected successfully 
+2025-03-15 21:51:41 info: Server running on port 5000 
+2025-03-15 21:51:41 info: GraphQL endpoint: http://192.168.29.206:5000/graphql 
+2025-03-15 21:51:41 info: WebSocket endpoint: ws://192.168.29.206:5000 
+2025-03-16 20:18:50 info: Database connected successfully 
+2025-03-16 20:18:51 info: Server running on port 5000 
+2025-03-16 20:18:51 info: GraphQL endpoint: http://127.0.0.1:5000/graphql 
+2025-03-16 20:18:51 info: WebSocket endpoint: ws://127.0.0.1:5000 
+2025-03-16 20:24:48 info: Database connected successfully 
+2025-03-16 20:24:49 info: Server running on port 5000 
+2025-03-16 20:24:49 info: GraphQL endpoint: http://192.168.29.206:5000/graphql 
+2025-03-16 20:24:49 info: WebSocket endpoint: ws://192.168.29.206:5000 
+2025-03-16 20:34:55 info: Database connected successfully 
+2025-03-16 20:34:55 info: Server running on port 5000 
+2025-03-16 20:34:55 info: GraphQL endpoint: http://192.168.29.206:5000/graphql 
+2025-03-16 20:34:55 info: WebSocket endpoint: ws://192.168.29.206:5000 
+2025-03-16 20:43:35 info: Database connected successfully 
+2025-03-16 20:43:35 info: Server running on port 5000 
+2025-03-16 20:43:35 info: GraphQL endpoint: http://192.168.167.107:5000/graphql 
+2025-03-16 20:43:35 info: WebSocket endpoint: ws://192.168.167.107:5000 
+2025-03-16 20:44:24 info: Database connected successfully 
+2025-03-16 20:44:24 info: Server running on port 5000 
+2025-03-16 20:44:24 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-16 20:44:24 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-16 20:49:40 info: Database connected successfully 
+2025-03-16 20:49:41 info: Server running on port 5000 
+2025-03-16 20:49:41 info: GraphQL endpoint: http://192.168.167.107:5000/graphql 
+2025-03-16 20:49:41 info: WebSocket endpoint: ws://192.168.167.107:5000 
+2025-03-16 20:56:29 info: Database connected successfully 
+2025-03-16 20:56:29 info: Server running on port 5000 
+2025-03-16 20:56:29 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-16 20:56:29 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-16 21:04:32 info: Database connected successfully 
+2025-03-16 21:04:32 info: Server running on port 5000 
+2025-03-16 21:04:32 info: GraphQL endpoint: http://172.20.127.255:5000/graphql 
+2025-03-16 21:04:32 info: WebSocket endpoint: ws://172.20.127.255:5000 
+2025-03-16 21:05:18 info: Database connected successfully 
+2025-03-16 21:05:18 info: Server running on port 5000 
+2025-03-16 21:05:18 info: GraphQL endpoint: http://172.20.127.255:5000/graphql 
+2025-03-16 21:05:18 info: WebSocket endpoint: ws://172.20.127.255:5000 
+2025-03-16 21:08:40 info: Database connected successfully 
+2025-03-16 21:08:40 info: Server running on port 5000 
+2025-03-16 21:08:40 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-16 21:08:40 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-16 21:14:26 info: Database connected successfully 
+2025-03-16 21:14:26 info: Server running on port 5000 
+2025-03-16 21:14:26 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-16 21:14:26 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-16 21:57:19 info: Database connected successfully 
+2025-03-16 21:57:19 info: Server running on port 5000 
+2025-03-16 21:57:19 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-16 21:57:19 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-16 22:08:04 info: Database connected successfully 
+2025-03-16 22:08:04 info: Server running on port 5000 
+2025-03-16 22:08:04 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-16 22:08:04 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-16 22:12:02 info: Database connected successfully 
+2025-03-16 22:12:02 info: Server running on port 5000 
+2025-03-16 22:12:02 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-16 22:12:02 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-16 22:18:53 info: Database connected successfully 
+2025-03-16 22:18:53 info: Server running on port 5000 
+2025-03-16 22:18:53 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-16 22:18:53 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-16 23:33:59 info: Database connected successfully 
+2025-03-16 23:33:59 info: Server running on port 5000 
+2025-03-16 23:33:59 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-16 23:33:59 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-16 23:40:43 error: GraphQL error Cannot query field "id" on type "Query". {
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "http": {
+      "status": 400,
+      "headers": {}
+    },
+    "code": "GRAPHQL_VALIDATION_FAILED"
+  },
+  "stack": "GraphQLError: Cannot query field \"id\" on type \"Query\".\n    at Object.Field (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/validation/rules/FieldsOnCorrectTypeRule.js:51:13)\n    at Object.enter (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/language/visitor.js:301:32)\n    at Object.enter (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/utilities/TypeInfo.js:391:27)\n    at visit (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/language/visitor.js:197:21)\n    at validate (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/validation/validate.js:91:24)\n    at processGraphQLRequest (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:246:40)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async internalExecuteOperation (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/ApolloServer.ts:1331:12)\n    at async runHttpQuery (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/runHttpQuery.ts:232:27)\n    at async runPotentiallyBatchedHttpQuery (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/httpBatching.ts:85:12)"
+}
+2025-03-16 23:42:54 error: GraphQL error You must be logged in {
+  "path": [
+    "getUserProfile"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: You must be logged in\n    at Object.getUserProfile (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/profile.ts:11:15)\n    at field.resolve (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/utils/schemaInstrumentation.ts:82:22)\n    at executeField (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:492:20)\n    at executeFields (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:414:22)\n    at executeOperation (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:344:14)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:136:20)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)\n    at async processGraphQLRequest (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:429:26)"
+}
+2025-03-17 00:12:32 info: Database connected successfully 
+2025-03-17 00:12:32 info: Server running on port 5000 
+2025-03-17 00:12:32 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-17 00:12:32 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-17 00:23:07 info: Database connected successfully 
+2025-03-17 00:23:07 info: Server running on port 5000 
+2025-03-17 00:23:07 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-17 00:23:07 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-17 00:24:30 info: Database connected successfully 
+2025-03-17 00:24:30 info: Server running on port 5000 
+2025-03-17 00:24:30 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-17 00:24:30 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-17 00:34:30 info: Database connected successfully 
+2025-03-17 00:34:30 info: Server running on port 5000 
+2025-03-17 00:34:30 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-17 00:34:30 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-17 00:40:04 info: Database connected successfully 
+2025-03-17 00:40:04 info: Server running on port 5000 
+2025-03-17 00:40:04 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-17 00:40:04 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-17 00:42:27 info: Database connected successfully 
+2025-03-17 00:42:27 info: Server running on port 5000 
+2025-03-17 00:42:27 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-17 00:42:27 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-17 00:43:33 info: Database connected successfully 
+2025-03-17 00:43:33 info: Server running on port 5000 
+2025-03-17 00:43:33 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-17 00:43:33 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-17 00:45:21 info: Database connected successfully 
+2025-03-17 00:45:21 info: Server running on port 5000 
+2025-03-17 00:45:21 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-17 00:45:21 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-17 00:46:09 info: Database connected successfully 
+2025-03-17 00:46:09 info: Server running on port 5000 
+2025-03-17 00:46:09 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-17 00:46:09 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-17 00:48:12 info: Database connected successfully 
+2025-03-17 00:48:12 info: Server running on port 5000 
+2025-03-17 00:48:12 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-17 00:48:12 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-17 01:21:31 info: Database connected successfully 
+2025-03-17 01:21:31 info: Server running on port 5000 
+2025-03-17 01:21:31 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-17 01:21:31 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-17 01:23:37 error: GraphQL error Cannot return null for non-nullable field Query.healthCheck. {
+  "path": [
+    "healthCheck"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {},
+  "stack": "Error: Cannot return null for non-nullable field Query.healthCheck.\n    at completeValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:605:13)\n    at executeField (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:500:19)\n    at executeFields (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:414:22)\n    at executeOperation (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:344:14)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:136:20)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)\n    at async processGraphQLRequest (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:429:26)\n    at async internalExecuteOperation (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/ApolloServer.ts:1331:12)"
+}
+2025-03-17 01:25:35 info: Database connected successfully 
+2025-03-17 01:25:36 info: Server running on port 5000 
+2025-03-17 01:25:36 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-17 01:25:36 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-17 01:29:03 info: Database connected successfully 
+2025-03-17 01:29:03 info: Server running on port 5000 
+2025-03-17 01:29:03 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-17 01:29:03 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-17 01:29:30 error: GraphQL error Cannot return null for non-nullable field Query.healthCheck. {
+  "path": [
+    "healthCheck"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {},
+  "stack": "Error: Cannot return null for non-nullable field Query.healthCheck.\n    at completeValue (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:605:13)\n    at executeField (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:500:19)\n    at executeFields (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:414:22)\n    at executeOperation (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:344:14)\n    at execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/graphql/execution/execute.js:136:20)\n    at executeIncrementally (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/incrementalDeliveryPolyfill.ts:114:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async execute (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:543:31)\n    at async processGraphQLRequest (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/requestPipeline.ts:429:26)\n    at async internalExecuteOperation (/Users/ram/Desktop/ExploratoryProject/assistblind/node_modules/@apollo/server/src/ApolloServer.ts:1331:12)"
+}
+2025-03-17 01:35:47 info: Database connected successfully 
+2025-03-17 01:35:47 info: Server running on port 5000 
+2025-03-17 01:35:47 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-17 01:35:47 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-17 01:41:32 info: Database connected successfully 
+2025-03-17 01:41:32 info: Server running on port 5000 
+2025-03-17 01:41:32 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-17 01:41:32 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-17 01:53:25 info: Database connected successfully 
+2025-03-17 01:53:25 info: Server running on port 5000 
+2025-03-17 01:53:25 info: GraphQL endpoint: http://localhost:5000/graphql 
+2025-03-17 01:53:25 info: WebSocket endpoint: ws://localhost:5000 
+2025-03-17 01:56:29 info: Database connected successfully 
+2025-03-17 01:56:29 info: Server running on port 5000 
+2025-03-17 01:56:29 info: GraphQL endpoint: http://192.168.167.107:5000/graphql 
+2025-03-17 01:56:29 info: WebSocket endpoint: ws://192.168.167.107:5000 
+2025-03-17 02:13:07 info: Database connected successfully 
+2025-03-17 02:13:07 info: Server running on port 5000 
+2025-03-17 02:13:07 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-17 02:13:07 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-17 02:14:58 error: GraphQL error User not found {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
+}
+2025-03-17 11:12:03 info: Database connected successfully 
+2025-03-17 11:12:03 info: Server running on port 5000 
+2025-03-17 11:12:03 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-17 11:12:03 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-18 07:34:47 info: Database connected successfully 
+2025-03-18 07:34:47 info: Server running on port 5000 
+2025-03-18 07:34:47 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-18 07:34:47 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-18 11:40:31 info: Database connected successfully 
+2025-03-18 11:40:31 info: Server running on port 5000 
+2025-03-18 11:40:31 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-18 11:40:31 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-18 11:42:00 info: Database connected successfully 
+2025-03-18 11:42:01 info: Server running on port 5000 
+2025-03-18 11:42:01 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-18 11:42:01 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-18 11:43:23 info: Database connected successfully 
+2025-03-18 11:43:24 info: Server running on port 5000 
+2025-03-18 11:43:24 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-18 11:43:24 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-18 12:04:12 info: Database connected successfully 
+2025-03-18 12:04:12 info: Server running on port 5000 
+2025-03-18 12:04:12 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-18 12:04:12 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-18 12:05:59 info: Database connected successfully 
+2025-03-18 12:05:59 info: Server running on port 5000 
+2025-03-18 12:05:59 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-18 12:05:59 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-18 12:50:54 info: Database connected successfully 
+2025-03-18 12:50:54 info: Server running on port 5000 
+2025-03-18 12:50:54 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-18 12:50:54 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-18 14:06:15 info: Database connected successfully 
+2025-03-18 14:06:15 info: Server running on port 5000 
+2025-03-18 14:06:15 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-18 14:06:15 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-18 17:53:40 info: Database connected successfully 
+2025-03-18 17:53:40 info: Server running on port 5000 
+2025-03-18 17:53:40 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-18 17:53:40 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-18 18:12:49 info: Database connected successfully 
+2025-03-18 18:12:49 info: Server running on port 5000 
+2025-03-18 18:12:49 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-18 18:12:49 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-18 18:49:13 info: Client connected: TwQvboeZC_MKKGDAAAAF 
+2025-03-18 18:53:08 info: Client connected: Dz91epSln0a8TpDBAAAH 
+2025-03-18 20:04:35 info: Database connected successfully 
+2025-03-18 20:04:35 info: Server running on port 5000 
+2025-03-18 20:04:35 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-18 20:04:35 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-18 20:06:45 info: Client connected: ElbveLsE4os1xhCGAAAB 
+2025-03-18 20:10:19 info: Client connected: iq_DjMJBkIhTNUVwAAAD 
+2025-03-18 20:16:52 info: Client connected: 5qlltktbw5PgQGmzAAAF 
+2025-03-18 20:22:50 info: Client connected: rqRBEA3tABH5OTVTAAAH 
+2025-03-18 20:26:11 info: Database connected successfully 
+2025-03-18 20:26:11 info: Server running on port 5000 
+2025-03-18 20:26:11 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-18 20:26:11 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-18 20:26:43 info: Client connected: qhmmGEuA90_0lYEUAAAB 
+2025-03-18 20:27:37 info: Client connected: sOXfFQNytVz9JyasAAAD 
+2025-03-18 20:31:37 info: Client connected: SixrIhrE-gbA5ppLAAAF 
+2025-03-18 20:31:58 info: Client connected: TSe97eV0dp3qkcvCAAAH 
+2025-03-18 20:32:05 info: Client connected: aNfxdS53AsBVN0pJAAAJ 
+2025-03-18 20:32:11 info: Client connected: zJK-U_Kd4OsV6ueUAAAL 
+2025-03-18 20:33:46 info: Client connected: Yq2FcCj6NoJvsFDuAAAN 
+2025-03-18 20:35:15 info: Client connected: o-MfMuVqM32KubesAAAP 
+2025-03-18 20:35:31 info: Client connected: CV4H2Z9MUCyC2OGPAAAR 
+2025-03-18 20:36:50 info: Client connected: YkZbybsgS4teTKfyAAAT 
+2025-03-18 20:36:54 info: Client connected: bpOty50O-BJnbtKuAAAV 
+2025-03-18 20:36:55 info: Client connected: _8XIYt0zF9AA6O5-AAAX 
+2025-03-18 20:36:57 info: Client connected: Xr1wK4LEEiSpJzNRAAAZ 
+2025-03-18 20:38:37 info: Client connected: js-FwfInXC-xdBjbAAAb 
+2025-03-18 21:52:57 info: Client connected: h9x5afpV9lfA6GyXAAAd 
+2025-03-19 13:49:22 info: Database connected successfully 
+2025-03-19 13:49:22 info: Server running on port 5000 
+2025-03-19 13:49:22 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-19 13:49:22 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-19 13:49:29 info: Client connected: MsKY6zfEkOyTdR07AAAB 
+2025-03-19 13:55:44 info: Database connected successfully 
+2025-03-19 13:55:45 info: Server running on port 5000 
+2025-03-19 13:55:45 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-19 13:55:45 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-19 14:00:27 info: Client connected: m97eQtqU0DJ7_X41AAAB 
+2025-03-19 14:02:08 info: Client connected: Sqe_zlbXrAWRvyMcAAAD 
+2025-03-19 14:02:12 info: Client connected: -2zxSSWc1VG-euSTAAAF 
+2025-03-19 14:02:13 info: Client connected: zFURDzxJmEbo2PlpAAAH 
+2025-03-19 14:02:15 info: Client connected: 7TyVFUAMC5hfFNtmAAAJ 
+2025-03-19 14:02:24 info: Client connected: yn2goZNoHxKZRpQhAAAL 
+2025-03-19 14:05:13 info: Client connected: Z2pAg-lImqTNrfrGAAAN 
+2025-03-19 14:05:17 info: Client connected: 05_TTVvCZxF27wznAAAP 
+2025-03-19 14:05:25 info: Client connected: p3KQd6m8oIkiEm8CAAAR 
+2025-03-19 14:05:37 info: Client connected: CBZ2_Q0oiSjMJkDoAAAT 
+2025-03-19 14:05:49 info: Client connected: E_8lGmZZ1EcLRV31AAAV 
+2025-03-19 14:05:53 info: Client connected: 0aCTiHdxT-NtyMXjAAAX 
+2025-03-19 14:06:06 info: Client connected: TebJhve0RRCizk41AAAZ 
+2025-03-19 14:06:46 info: Client connected: 7P1YhpZ9H15w8wjxAAAb 
+2025-03-19 14:08:56 info: Client connected: QncBtFmbZYAs54GfAAAd 
+2025-03-19 14:09:03 info: Client connected: Vh7xErK6AXboP2uKAAAf 
+2025-03-19 14:09:03 info: Client connected: kyOmglAQXpIvpiVKAAAh 
+2025-03-19 14:09:10 info: Client connected: u_h_DtwwvkkF0OLpAAAj 
+2025-03-19 14:16:47 info: Client connected: q7jhMoTcxRqdZtxdAAAl 
+2025-03-19 17:10:51 info: Database connected successfully 
+2025-03-19 17:10:51 info: Server running on port 5000 
+2025-03-19 17:10:51 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-19 17:10:51 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-19 17:48:10 info: Database connected successfully 
+2025-03-19 17:48:10 info: Server running on port 5000 
+2025-03-19 17:48:10 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-19 17:48:10 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-19 17:49:48 info: Client connected: SANaUxJwfqCMlAyTAAAB 
+2025-03-21 16:51:39 info: Database connected successfully 
+2025-03-21 16:51:39 info: Server running on port 5000 
+2025-03-21 16:51:39 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-21 16:51:39 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-21 16:57:05 info: Client connected: s3S31MhPC_BNWkQrAAAB 
+2025-03-26 22:55:17 info: Database connected successfully 
+2025-03-26 22:55:17 info: Server running on port 5000 
+2025-03-26 22:55:17 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-26 22:55:17 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-26 23:51:33 info: Database connected successfully 
+2025-03-26 23:51:33 info: Server running on port 5000 
+2025-03-26 23:51:33 info: GraphQL endpoint: http://172.20.50.186:5000/graphql 
+2025-03-26 23:51:33 info: WebSocket endpoint: ws://172.20.50.186:5000 
+2025-03-27 00:01:54 info: Database connected successfully 
+2025-03-27 00:01:54 info: Server running on port 5000 
+2025-03-27 00:01:54 info: GraphQL endpoint: http://172.20.10.112:5000/graphql 
+2025-03-27 00:01:54 info: WebSocket endpoint: ws://172.20.10.112:5000 
+2025-03-27 00:12:34 error: GraphQL error User not found {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
+}
+2025-03-27 00:12:40 error: GraphQL error User not found {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
+}
+2025-03-27 00:14:46 error: GraphQL error User not found {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
+}
+2025-03-27 00:16:29 error: GraphQL error User not found {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
+}
+2025-03-27 00:51:54 info: Client connected: fEdmk-C3MpSNlitcAAAB 
+2025-03-27 00:53:05 info: Client connected: cy4O4ObrUhejyE5uAAAD 
