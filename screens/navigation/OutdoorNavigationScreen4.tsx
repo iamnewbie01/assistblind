@@ -9,8 +9,9 @@ import Geolocation from '@react-native-community/geolocation';
 import navigationService from '../../services/NavigationService';
 import {decode} from '@mapbox/polyline';
 import SpeechService from '../../services/SpeechService';
+import ObstacleDetectionApp from './ObstacleDetection';
 
-const WS_URL = 'ws://172.20.10.112:5000';
+const WS_URL = 'ws://172.20.55.180:3000';
 
 type Props = {
   navigation: StackNavigationProp<
@@ -19,6 +20,7 @@ type Props = {
   >;
   route: RouteProp<RootStackParamList, 'OutdoorNavigationScreen4'>;
 };
+
 
 const NavigationContainer: React.FC<Props> = ({navigation, route}) => {
   const {locationDetails, userLocation} = route.params;
@@ -217,16 +219,19 @@ const NavigationContainer: React.FC<Props> = ({navigation, route}) => {
     // Handle phone action
   };
 
+
   return (
     <View style={styles.container}>
-      <Image
+      {/* <Image
         source={{
           uri: 'https://cdn.builder.io/api/v1/image/assets/TEMP/8ab088c4759e58b1590833655f939ca6d5266dda',
         }}
         style={styles.backgroundImage}
         resizeMode="cover"
-      />
+      /> */}
       <BackButton onPress={handleBackPress} />
+
+      <ObstacleDetectionApp outdoor={1}/>
       <View style={styles.bottomPanel}>
         <ContentCard
           onPause={handlePause}
@@ -258,7 +263,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     width: '100%',
-    padding: 24,
+    // padding: 24,
   },
 });
 

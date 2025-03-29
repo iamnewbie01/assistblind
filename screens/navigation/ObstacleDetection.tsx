@@ -1,24 +1,25 @@
-import React, {useState, useEffect, useRef} from 'react';
-import {
-  View,
-  Button,
-  Text,
-  StyleSheet,
-  ActivityIndicator,
-  Image,
-  ScrollView,
-  SafeAreaView,
-} from 'react-native';
-import {Camera, useCameraDevice} from 'react-native-vision-camera';
+import React, { useState, useEffect, useRef } from 'react';
+import { View, Button, Text, StyleSheet, ActivityIndicator, Image, ScrollView, SafeAreaView ,Pressable } from 'react-native';
+import { Camera, useCameraDevice } from 'react-native-vision-camera';
 import RNFS from 'react-native-fs';
 import axios from 'axios';
 import ImageResizer from 'react-native-image-resizer';
-import {Svg, Rect, Text as SvgText} from 'react-native-svg';
+import { Svg, Rect, Text as SvgText } from 'react-native-svg';
 import Tts from 'react-native-tts';
 
-const ObstacleDetectionApp = () => {
-  return <ObstacleDetection />;
+
+const ObstacleDetectionApp = ({ outdoor }) => {
+  return <ObstacleDetection outdoor={outdoor} />;
 };
+
+interface Prediction {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  class: string;
+  confidence: number;
+}
 
 const OBSTACLE_CLASSES = [
   'door',
@@ -51,26 +52,34 @@ const OBSTACLE_CLASSES = [
   'desk',
   'glass door',
   'puddle',
-  'elevator',
+  'elevator'
 ];
 
-const ObstacleDetection = () => {
+const ObstacleDetection = ({ 
+  outdoor, 
+}) => {
+
   const [hasPermission, setHasPermission] = useState(false);
   const [imageUri, setImageUri] = useState<string | null>(null);
   const [resizedUri, setResizedUri] = useState<string | null>(null);
   const [isCameraActive, setIsCameraActive] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [detectionData, setDetectionData] = useState<any>(null);
+  const [detectionData, setDetectionData] = useState<{
+    predictions: Prediction[];
+    image: { width: number; height: number };
+  } | null>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [RealTimeDetectionActive, setRealTimeDetectionActive] = useState(false);
-  const [lastDetectedObstacles, setLastDetectedObstacles] = useState<any[]>([]);
+  const [navigationState, setNavigationState] = useState<'idle' | 'detecting' | 'detected'>('idle');
+  const [lastDetectedObstacles, setLastDetectedObstacles] = useState<Prediction[]>([]);
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [frameCount, setFrameCount] = useState(0);
+  const [lastAnnouncedObstacle, setLastAnnouncedObstacle] = useState<string | null>(null);
   const time_gap = 200;
+  const [isOutdoor] = useState(outdoor);
 
   const device = useCameraDevice('back');
   const cameraRef = useRef<Camera>(null);
-  const RealTimeDetectionTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const RealTimeDetectionTimer = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     const getPermission = async () => {
@@ -81,58 +90,40 @@ const ObstacleDetection = () => {
 
     Tts.setDefaultRate(0.5);
     Tts.setDefaultPitch(1.0);
-
+    
     Tts.addEventListener('tts-start', () => setIsSpeaking(true));
     Tts.addEventListener('tts-finish', () => setIsSpeaking(false));
     Tts.addEventListener('tts-cancel', () => setIsSpeaking(false));
+
+    // Initial instruction
+    if(outdoor == 0){
+      Tts.speak('Tap anywhere on screen to start obstacle detection');
+    }else{
+      setTimeout(() => {
+        Tts.speak('Tap anywhere on screen to start obstacle detection');
+      }, 1000);
+    }
 
     return () => {
       if (RealTimeDetectionTimer.current) {
         clearInterval(RealTimeDetectionTimer.current);
       }
-
+      
       Tts.removeAllListeners('tts-start');
       Tts.removeAllListeners('tts-finish');
       Tts.removeAllListeners('tts-cancel');
     };
   }, []);
 
-  const takePhoto = async () => {
-    try {
-      setIsCameraActive(true);
-
-      await new Promise(resolve => setTimeout(resolve, 300));
-
-      if (cameraRef.current) {
-        const photo = await cameraRef.current.takePhoto();
-        const fileUri = 'file://' + photo.path;
-        setImageUri(fileUri);
-        setIsCameraActive(false);
-        return fileUri;
-      }
-    } catch (err) {
-      setError(`Error taking photo: ${err}`);
-      setIsCameraActive(false);
-      return null;
-    }
-  };
-
-  const determineQuadrant = (
-    x: number,
-    y: number,
-    width: number,
-    height: number,
-    imgWidth: number,
-    imgHeight: number,
-  ) => {
+  const determineQuadrant = (x: number, y: number, width: number, height: number, imgWidth: number, imgHeight: number) => {
     const centerX = x;
     const centerY = y;
-
+    
     const leftBoundary = imgWidth * 0.4;
     const rightBoundary = imgWidth * 0.6;
     const topBoundary = imgHeight * 0.4;
     const bottomBoundary = imgHeight * 0.6;
-
+    
     let horizontalPosition = '';
     if (centerX < leftBoundary) {
       horizontalPosition = 'left';
@@ -141,7 +132,7 @@ const ObstacleDetection = () => {
     } else {
       horizontalPosition = 'center';
     }
-
+    
     let verticalPosition = '';
     if (centerY < topBoundary) {
       verticalPosition = 'far';
@@ -150,98 +141,88 @@ const ObstacleDetection = () => {
     } else {
       verticalPosition = '';
     }
-
+    
     if (horizontalPosition === 'center') {
       return verticalPosition ? `${verticalPosition} ahead` : 'ahead';
     } else {
-      return verticalPosition
-        ? `${verticalPosition} ${horizontalPosition}`
-        : horizontalPosition;
+      return verticalPosition ? `${verticalPosition} ${horizontalPosition}` : horizontalPosition;
     }
   };
 
-  const announceObstacle = (
-    predictions: any[],
-    imageWidth: number,
-    imageHeight: number,
-  ) => {
+  const announceObstacle = (predictions: Prediction[], imageWidth: number, imageHeight: number) => {
     if (predictions.length === 0 || isSpeaking) return;
-
-    const topObstacle = predictions[0];
-    const quadrant = determineQuadrant(
-      topObstacle.x,
-      topObstacle.y,
-      topObstacle.width,
-      topObstacle.height,
-      imageWidth,
-      imageHeight,
-    );
-
-    const announcement = `${topObstacle.class} ${quadrant}`;
-    Tts.speak(announcement);
+  
+    let obstacleToAnnounce: Prediction | null = null;
+  
+    if (predictions[0].class !== lastAnnouncedObstacle) {
+      obstacleToAnnounce = predictions[0];
+    } 
+    else if (predictions.length > 1 && predictions[1].class !== lastAnnouncedObstacle) {
+      obstacleToAnnounce = predictions[1];
+    }
+  
+    if (obstacleToAnnounce) {
+      const quadrant = determineQuadrant(
+        obstacleToAnnounce.x,
+        obstacleToAnnounce.y,
+        obstacleToAnnounce.width,
+        obstacleToAnnounce.height,
+        imageWidth,
+        imageHeight
+      );
+      
+      const announcement = `${obstacleToAnnounce.class} ${quadrant}`;
+      Tts.speak(announcement);
+      setLastAnnouncedObstacle(obstacleToAnnounce.class);
+    }
   };
 
-  const generalDetection = async (fileUri: string) => {
+  const generalDetection = async (fileUri: string): Promise<Prediction[]> => {
     try {
       setError(null);
       setIsLoading(true);
 
-      const resizedImage = await ImageResizer.createResizedImage(
-        fileUri,
-        640,
-        480,
-        'JPEG',
-        80,
-      );
+      const resizedImage = await ImageResizer.createResizedImage(fileUri, 640, 480, 'JPEG', 80);
       setResizedUri(resizedImage.uri);
 
       const imageData = await RNFS.readFile(resizedImage.uri, 'base64');
-
+      
       const response = await axios.post(
-        'https://detect.roboflow.com/obstacles-for-blind/3',
+        "https://detect.roboflow.com/obstacles-for-blind/3",
         imageData,
         {
-          params: {api_key: 'sJeTm3O7K8cx54VbZSPK'},
-          headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-        },
+          params: { api_key:  'sJeTm3O7K8cx54VbZSPK'},
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        }
       );
 
-      const filteredPredictions = response.data.predictions.filter(
-        (pred: any) =>
-          OBSTACLE_CLASSES.some(cls =>
-            pred.class.toLowerCase().includes(cls.toLowerCase()),
-          ),
+      const filteredPredictions: Prediction[] = response.data.predictions.filter((pred: any) => 
+        OBSTACLE_CLASSES.some(cls => pred.class.toLowerCase().includes(cls.toLowerCase()))
       );
-
-      const sortedPredictions = [...filteredPredictions].sort(
-        (a, b) => b.confidence - a.confidence,
-      );
-
+      
+      const sortedPredictions = [...filteredPredictions].sort((a, b) => b.confidence - a.confidence);
+      
       const filteredData = {
         ...response.data,
-        predictions: sortedPredictions,
+        predictions: sortedPredictions
       };
-
+      
       setDetectionData(filteredData);
       setLastDetectedObstacles(sortedPredictions);
-
+      
       setFrameCount(prevCount => {
         const newCount = prevCount + 1;
-
         if (newCount % 2 === 0 && sortedPredictions.length > 0) {
-          announceObstacle(
-            sortedPredictions,
-            response.data.image.width,
-            response.data.image.height,
-          );
+          announceObstacle(sortedPredictions, response.data.image.width, response.data.image.height);
+        } else if (newCount % 2 === 1) {
+          setLastAnnouncedObstacle(null);
         }
-
         return newCount;
       });
-
+      
       return sortedPredictions;
     } catch (err) {
-      if (err instanceof Error) {
+      if(err instanceof Error){
         setError(`Error sending image to model: ${err.message}`);
       }
       return [];
@@ -251,31 +232,34 @@ const ObstacleDetection = () => {
   };
 
   const startRealTimeDetection = () => {
+    
     if (RealTimeDetectionTimer.current) {
       clearInterval(RealTimeDetectionTimer.current);
     }
-
-    setRealTimeDetectionActive(true);
+    
+    setNavigationState('detecting');
     setIsCameraActive(true);
     setFrameCount(0);
-
+    setLastAnnouncedObstacle(null);
+    Tts.speak('Obstacle Detection started. Tap again to stop.');
+    
     const performDetection = async () => {
       try {
         if (cameraRef.current) {
           const photo = await cameraRef.current.takePhoto();
           const photoUri = 'file://' + photo.path;
-
+          
           await generalDetection(photoUri);
-
+          
           await RNFS.unlink(photoUri).catch(() => {});
         }
       } catch (err) {
         setError(`Error during auto detection: ${err}`);
       }
     };
-
+    
     performDetection();
-
+    
     RealTimeDetectionTimer.current = setInterval(performDetection, time_gap);
   };
 
@@ -284,10 +268,10 @@ const ObstacleDetection = () => {
       clearInterval(RealTimeDetectionTimer.current);
       RealTimeDetectionTimer.current = null;
     }
-    setRealTimeDetectionActive(false);
+    Tts.speak('Obstacle Detection stopped. Tap again to reset.');
+    setNavigationState('detected');
     setIsCameraActive(false);
-
-    Tts.stop();
+  
   };
 
   const resetDetection = () => {
@@ -297,27 +281,28 @@ const ObstacleDetection = () => {
     setLastDetectedObstacles([]);
     setError(null);
     setFrameCount(0);
+    setLastAnnouncedObstacle(null);
+    setNavigationState('idle');
+    
+    Tts.speak('Tap anywhere to start obstacle detection');
   };
 
-  const toggleRealTimeDetection = () => {
-    if (RealTimeDetectionActive) {
-      stopRealTimeDetection();
-    } else {
-      startRealTimeDetection();
-    }
-  };
 
-  const manualDetection = async () => {
-    const photoUri = await takePhoto();
-    if (photoUri) {
-      await generalDetection(photoUri);
-    }
-  };
+  const handleScreenTap = () => {
+    if (isSpeaking && navigationState === 'idle') return;
 
-  const deleteImage = async () => {
-    if (imageUri) {
-      await RNFS.unlink(imageUri).catch(() => {});
-      resetDetection();
+    switch (navigationState) {
+      case 'idle':
+        startRealTimeDetection();
+        break;
+      case 'detecting':
+        stopRealTimeDetection();
+        
+        setIsSpeaking(false);
+        break;
+      case 'detected':
+        resetDetection();
+        break;
     }
   };
 
@@ -348,7 +333,8 @@ const ObstacleDetection = () => {
                 y={Math.max(obj.y * scaleY, 10)}
                 fontSize="16"
                 fill="red"
-                fontWeight="bold">
+                fontWeight="bold"
+              >
                 {`${obj.class} (${(obj.confidence * 100).toFixed(1)}%)`}
               </SvgText>
             </React.Fragment>
@@ -363,23 +349,23 @@ const ObstacleDetection = () => {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
-        <View style={styles.mainContent}>
+      <Pressable 
+        style={styles.container} 
+        onPress={handleScreenTap}
+      >
+        <View style={{flex: isOutdoor===1?0.60:0.75}}>
           {isCameraActive ? (
             <View style={styles.cameraContainer}>
-              <Camera
-                ref={cameraRef}
-                device={device}
-                isActive={isCameraActive}
-                photo={true}
+              <Camera 
+                ref={cameraRef} 
+                device={device} 
+                isActive={isCameraActive} 
+                photo={true} 
                 style={styles.camera}
               />
-              {RealTimeDetectionActive && (
+              {navigationState === 'detecting' && (
                 <View style={styles.RealTimeDetectionOverlay}>
-                  <Text style={styles.RealTimeDetectionText}>
-                    Real Time Detection Active
-                  </Text>
-                  <ActivityIndicator size="large" color="#ffffff" />
+                  <Text style={styles.RealTimeDetectionText}>Real Time Detection Active</Text>
                   {renderSvgOverlays()}
                   {isSpeaking && (
                     <View style={styles.speakingIndicator}>
@@ -389,75 +375,40 @@ const ObstacleDetection = () => {
                 </View>
               )}
             </View>
-          ) : resizedUri ? (
-            <View style={styles.resultContainer}>
-              <Image source={{uri: resizedUri}} style={styles.image} />
-              {renderSvgOverlays()}
-            </View>
           ) : (
-            <View style={styles.noImageContainer}>
-              <Text style={styles.noImageText}>No image captured</Text>
-              <Text style={styles.noImageSubtext}>
-                Tap "Take Single Photo" or "Start Real Time Detection"
-              </Text>
-            </View>
+            resizedUri ? (
+              <View style={styles.resultContainer}>
+                <Image source={{ uri: resizedUri }} style={styles.image} />
+                {renderSvgOverlays()}
+              </View>
+            ) : (
+              <View style={styles.noImageContainer}>
+                <Text style={styles.noImageText}>Obstacle Detection</Text>
+                <Text style={styles.noImageSubtext}>Tap anywhere to start navigation</Text>
+              </View>
+            )
           )}
         </View>
-
-        <View style={styles.bottomSection}>
-          <View style={styles.controlsContainer}>
-            <Button
-              title={
-                RealTimeDetectionActive
-                  ? 'Stop Real Time Detection'
-                  : 'Start Real Time Detection'
-              }
-              onPress={toggleRealTimeDetection}
-              color={RealTimeDetectionActive ? '#ff0000' : '#00aa00'}
-            />
-
-            {!RealTimeDetectionActive && (
-              <View style={styles.buttonContainer}>
-                <Button
-                  title="Take Single Photo"
-                  onPress={manualDetection}
-                  disabled={isLoading}
-                />
-                {imageUri && (
-                  <Button title="Delete & Reset" onPress={deleteImage} />
-                )}
-                {!imageUri && detectionData && (
-                  <Button title="Reset Detection" onPress={resetDetection} />
-                )}
-              </View>
-            )}
+        
+        <View style={styles.obstacleListContainer}>
+          <View style={styles.listHeaderContainer}>
+            <Text style={styles.listTitle}>Detected Obstacles:</Text>
+            {isLoading && <ActivityIndicator size="small" color="#0000ff" />}
           </View>
-
-          <View style={styles.obstacleListContainer}>
-            <View style={styles.listHeaderContainer}>
-              <Text style={styles.listTitle}>Detected Obstacles:</Text>
-              {isLoading && <ActivityIndicator size="small" color="#0000ff" />}
-            </View>
-
-            <ScrollView
-              style={styles.obstacleScroll}
-              contentContainerStyle={styles.obstacleScrollContent}>
-              {detectionData?.predictions &&
-              detectionData.predictions.length > 0 ? (
-                detectionData.predictions.map((obj: any, index: number) => (
-                  <Text key={`${obj.class}-${index}`} style={styles.listItem}>
-                    {`${obj.class} (${(obj.confidence * 100).toFixed(1)}%)`}
-                  </Text>
-                ))
-              ) : (
-                <Text style={styles.noObstaclesText}>
-                  No relevant obstacles detected
+          
+          <ScrollView style={styles.obstacleScroll} contentContainerStyle={styles.obstacleScrollContent}>
+            {detectionData?.predictions && detectionData.predictions.length > 0 ? (
+              detectionData.predictions.map((obj: any, index: number) => (
+                <Text key={`${obj.class}-${index}`} style={styles.listItem}>
+                  {`${obj.class} (${(obj.confidence * 100).toFixed(1)}%)`}
                 </Text>
-              )}
-            </ScrollView>
-          </View>
+              ))
+            ) : (
+              <Text style={styles.noObstaclesText}>No relevant obstacles detected</Text>
+            )}
+          </ScrollView>
         </View>
-      </View>
+      </Pressable>
     </SafeAreaView>
   );
 };
@@ -467,11 +418,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#f5f5f5',
   },
-  container: {
+  container: { 
     flex: 1,
-  },
-  mainContent: {
-    flex: 0.75,
   },
   bottomSection: {
     flex: 0.25,
@@ -480,10 +428,10 @@ const styles = StyleSheet.create({
   },
   cameraContainer: {
     flex: 1,
-    position: 'relative',
+    position: 'relative'
   },
-  camera: {
-    flex: 1,
+  camera: { 
+    flex: 1 
   },
   RealTimeDetectionOverlay: {
     position: 'absolute',
@@ -493,7 +441,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0,0,0,0)',
+    backgroundColor: 'rgba(0,0,0,0)'
   },
   RealTimeDetectionText: {
     color: '#ffffff',
@@ -501,8 +449,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 10,
     textShadowColor: 'rgba(0, 0, 0, 0.75)',
-    textShadowOffset: {width: 1, height: 1},
-    textShadowRadius: 2,
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2
   },
   speakingIndicator: {
     position: 'absolute',
@@ -510,13 +458,13 @@ const styles = StyleSheet.create({
     right: 10,
     backgroundColor: 'rgba(0, 200, 0, 0.7)',
     padding: 8,
-    borderRadius: 5,
+    borderRadius: 5
   },
   speakingText: {
     color: '#ffffff',
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
-  controlsContainer: {
+  controlsContainer: { 
     padding: 8,
     backgroundColor: '#ffffff',
     borderTopWidth: 1,
@@ -528,24 +476,24 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     marginTop: 8,
-    marginBottom: 4,
+    marginBottom: 4
   },
-  resultContainer: {
+  resultContainer: { 
     flex: 1,
-    position: 'relative',
+    position: 'relative', 
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#000',
+    backgroundColor: '#000'
   },
-  image: {
-    width: '100%',
+  image: { 
+    width: '100%', 
     height: '100%',
-    resizeMode: 'contain',
+    resizeMode: 'contain'
   },
-  svg: {
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
+  svg: { 
+    position: 'absolute', 
+    width: '100%', 
+    height: '100%' 
   },
   noImageContainer: {
     flex: 1,
@@ -568,14 +516,14 @@ const styles = StyleSheet.create({
     padding: 4,
     alignItems: 'center',
     marginTop: 4,
-    borderRadius: 4,
+    borderRadius: 4
   },
   statusText: {
     fontWeight: 'bold',
-    fontSize: 14,
+    fontSize: 14
   },
-  obstacleListContainer: {
-    flex: 1,
+  obstacleListContainer: { 
+    flex: 0.25,
     backgroundColor: '#ffffff',
     borderTopWidth: 1,
     borderTopColor: '#dddddd',
@@ -586,35 +534,35 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 8,
     borderBottomWidth: 1,
-    borderBottomColor: '#eeeeee',
+    borderBottomColor: '#eeeeee'
   },
-  listTitle: {
-    fontSize: 16,
+  listTitle: { 
+    fontSize: 16, 
     fontWeight: 'bold',
-    color: '#2c3e50',
+    color: '#2c3e50'
   },
   obstacleScroll: {
     flex: 1,
   },
   obstacleScrollContent: {
     paddingHorizontal: 8,
-    paddingVertical: 4,
+    paddingVertical: 4
   },
-  listItem: {
-    fontSize: 15,
-    paddingVertical: 4,
+  listItem: { 
+    fontSize: 15, 
+    paddingVertical: 4, 
     paddingHorizontal: 8,
     marginVertical: 2,
     backgroundColor: '#f8f9fa',
     borderRadius: 4,
-    color: '#34495e',
+    color: '#34495e'
   },
   noObstaclesText: {
     fontSize: 14,
     fontStyle: 'italic',
     color: '#7f8c8d',
     textAlign: 'center',
-    paddingVertical: 10,
+    paddingVertical: 10
   },
   errorContainer: {
     position: 'absolute',
@@ -622,14 +570,13 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     backgroundColor: 'rgba(255,0,0,0.7)',
-    padding: 8,
+    padding: 8
   },
-  errorText: {
-    color: 'white',
+  errorText: { 
+    color: 'white', 
     textAlign: 'center',
-    fontWeight: 'bold',
-  },
+    fontWeight: 'bold'
+  }
 });
 
 export default ObstacleDetectionApp;
-

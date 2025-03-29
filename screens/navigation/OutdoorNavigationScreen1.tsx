@@ -113,6 +113,7 @@ const OutdoorNavigationScreen1: React.FC<Props> = ({navigation}) => {
           latitude: location.latitude,
           longitude: location.longitude
         });
+        console.log(placesDetails);
         const result: Place[] = placesDetails.data.places;
         navigation.navigate('OutdoorNavigationScreen2', {
           locations: result,

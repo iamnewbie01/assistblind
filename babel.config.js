@@ -13,6 +13,8 @@ module.exports = api => {
           'module:@react-native/babel-preset', // React Native frontend
           '@babel/preset-typescript',
         ],
+    
+    plugins: [['module:react-native-dotenv']],
     // plugins: [
     //   '@babel/plugin-proposal-class-properties',
     //   '@babel/plugin-proposal-export-default-from',

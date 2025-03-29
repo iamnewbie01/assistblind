@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // Create an http link for GraphQL requests
 const httpLink = createHttpLink({
-  uri: 'http://172.20.10.112:5000/graphql',
+  uri: 'http://172.20.55.180:3000/graphql',
 });
 
 // Error handling link

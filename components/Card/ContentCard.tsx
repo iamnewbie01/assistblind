@@ -22,7 +22,7 @@ export const ContentCard: React.FC<ContentCardProps> = ({
       <View style={styles.header}>
         <View style={styles.routeInfo}>
           <Text style={styles.routeTitle}>{destination}</Text>
-          <Text style={styles.routeSubtitle}>Walking to {destination}</Text>
+          {/* <Text style={styles.routeSubtitle}>Walking to {destination}</Text> */}
         </View>
         {/* <TouchableOpacity style={styles.phoneButton} onPress={onPhonePress}>
           <PhoneIcon />
@@ -31,7 +31,7 @@ export const ContentCard: React.FC<ContentCardProps> = ({
 
       <View style={styles.navigationInfo}>
         <Text style={styles.nextTurn}>Next: {nextInstruction}</Text>
-        <Text style={styles.cautionText}>Caution: Uneven surface ahead</Text>
+        {/* <Text style={styles.cautionText}>Caution: Uneven surface ahead</Text> */}
       </View>
 
       <View style={styles.actionButtons}>
@@ -49,9 +49,9 @@ export const ContentCard: React.FC<ContentCardProps> = ({
 const styles = StyleSheet.create({
   container: {
     borderRadius: 16,
-    padding: 24,
+    padding: 5,
     backgroundColor: 'white',
-    gap: 16,
+    gap: 4,
   },
   header: {
     flexDirection: 'row',

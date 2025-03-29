@@ -1,26 +1,26 @@
 import React from 'react';
-import {View, Image, StyleSheet} from 'react-native';
-import {NavigationCard} from '../../components/Card/NavigationCard';
-import {StackNavigationProp} from '@react-navigation/stack';
-import {RootStackParamList} from '../../App';
-import ObstacleDetectionApp from "../../services/ObstacleDetection";
+import { View, Image, StyleSheet } from 'react-native';
+import { NavigationCard } from '../../components/Card/NavigationCard';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../App';
+import ObstacleDetectionApp from "./ObstacleDetection.tsx";
+import { BackButton } from '../../components/Buttons/BackButton.tsx';
 
 type Props = {
-  navigation: StackNavigationProp<RootStackParamList, 'IndoorNavigation'>;
+  navigation: StackNavigationProp<RootStackParamList>;
 };
 
-const IndoorNavigation: React.FC<Props> = ({navigation}) => {
+const IndoorNavigation: React.FC<Props> = ({ navigation }) => {
   const handleEndNavigation = () => {
-    // Handle navigation end
     console.log('Navigation ended');
     navigation.navigate('MainMenuScreen');
   };
 
   return (
     <View style={styles.container}>
-      <ObstacleDetectionApp />
-      <View style={styles.overlay}>
-        {/* <NavigationCard onEndNavigation={handleEndNavigation} /> */}
+      <View style={styles.obstacleDetectionContainer}>
+        <ObstacleDetectionApp outdoor={0}/>
+        <BackButton onPress={handleEndNavigation} />
       </View>
     </View>
   );
@@ -28,24 +28,19 @@ const IndoorNavigation: React.FC<Props> = ({navigation}) => {
 
 const styles = StyleSheet.create({
   container: {
-    position: 'relative',
-    width: '100%',
-    height: '100%',
+    flex: 1,
     backgroundColor: '#0F172A',
   },
-  backgroundImage: {
+  navigationCardContainer: {
+    height: '40%',
     width: '100%',
-    height: '100%',
-  },
-  overlay: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    width: '100%',
-    padding: 24,
-    display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    paddingVertical: 10,
+  },
+  obstacleDetectionContainer: {
+    flex: 1,
+    width: '100%',
   },
 });
 

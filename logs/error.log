@@ -304,3 +304,59 @@
   },
   "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
 }
+2025-03-27 22:04:10 error: Database connection failed Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`. {
+  "clientVersion": "6.5.0",
+  "errorCode": "P1001",
+  "name": "PrismaClientInitializationError",
+  "stack": "PrismaClientInitializationError: Can't reach database server at `localhost:5432`\n\nPlease make sure your database server is running at `localhost:5432`.\n    at t (/Users/amandhingra/Developer/assistblind/node_modules/@prisma/client/runtime/library.js:112:2473)\n    at connectDatabase (/Users/amandhingra/Developer/assistblind/server/config/database.ts:8:5)\n    at startServer (/Users/amandhingra/Developer/assistblind/server/config/server.ts:42:5)"
+}
+2025-03-27 22:08:48 error: Database connection failed User `aryan` was denied access on the database `assistblind.public` {
+  "clientVersion": "6.5.0",
+  "errorCode": "P1010",
+  "name": "PrismaClientInitializationError",
+  "stack": "PrismaClientInitializationError: User `aryan` was denied access on the database `assistblind.public`\n    at t (/Users/amandhingra/Developer/assistblind/node_modules/@prisma/client/runtime/library.js:112:2473)\n    at connectDatabase (/Users/amandhingra/Developer/assistblind/server/config/database.ts:8:5)\n    at startServer (/Users/amandhingra/Developer/assistblind/server/config/server.ts:42:5)"
+}
+2025-03-27 22:51:41 error: GraphQL error 
+Invalid `prisma.user.findUnique()` invocation in
+/Users/amandhingra/Developer/assistblind/server/api/resolvers/auth.ts:20:46
+
+  17 const publicKey = touchId;
+  18 
+  19 // Check if user with this publicKey already exists
+→ 20 const existingUser = await prisma.user.findUnique(
+The table `public.User` does not exist in the current database. {
+  "path": [
+    "registerUser"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {},
+  "stack": "PrismaClientKnownRequestError: \nInvalid `prisma.user.findUnique()` invocation in\n/Users/amandhingra/Developer/assistblind/server/api/resolvers/auth.ts:20:46\n\n  17 const publicKey = touchId;\n  18 \n  19 // Check if user with this publicKey already exists\n→ 20 const existingUser = await prisma.user.findUnique(\nThe table `public.User` does not exist in the current database.\n    at Wn.handleRequestError (/Users/amandhingra/Developer/assistblind/node_modules/@prisma/client/runtime/library.js:121:7534)\n    at Wn.handleAndLogRequestError (/Users/amandhingra/Developer/assistblind/node_modules/@prisma/client/runtime/library.js:121:6858)\n    at Wn.request (/Users/amandhingra/Developer/assistblind/node_modules/@prisma/client/runtime/library.js:121:6565)\n    at async l (/Users/amandhingra/Developer/assistblind/node_modules/@prisma/client/runtime/library.js:130:10067)\n    at Object.registerUser (/Users/amandhingra/Developer/assistblind/server/api/resolvers/auth.ts:20:28)"
+}
+2025-03-27 22:53:06 error: GraphQL error 
+Invalid `prisma.user.findUnique()` invocation in
+/Users/amandhingra/Developer/assistblind/server/api/resolvers/auth.ts:20:46
+
+  17 const publicKey = touchId;
+  18 
+  19 // Check if user with this publicKey already exists
+→ 20 const existingUser = await prisma.user.findUnique(
+The table `public.User` does not exist in the current database. {
+  "path": [
+    "registerUser"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {},
+  "stack": "PrismaClientKnownRequestError: \nInvalid `prisma.user.findUnique()` invocation in\n/Users/amandhingra/Developer/assistblind/server/api/resolvers/auth.ts:20:46\n\n  17 const publicKey = touchId;\n  18 \n  19 // Check if user with this publicKey already exists\n→ 20 const existingUser = await prisma.user.findUnique(\nThe table `public.User` does not exist in the current database.\n    at Wn.handleRequestError (/Users/amandhingra/Developer/assistblind/node_modules/@prisma/client/runtime/library.js:121:7534)\n    at Wn.handleAndLogRequestError (/Users/amandhingra/Developer/assistblind/node_modules/@prisma/client/runtime/library.js:121:6858)\n    at Wn.request (/Users/amandhingra/Developer/assistblind/node_modules/@prisma/client/runtime/library.js:121:6565)\n    at async l (/Users/amandhingra/Developer/assistblind/node_modules/@prisma/client/runtime/library.js:130:10067)\n    at Object.registerUser (/Users/amandhingra/Developer/assistblind/server/api/resolvers/auth.ts:20:28)"
+}
