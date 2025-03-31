@@ -1,5 +1,6 @@
 import axios, {AxiosInstance} from 'axios';
-const API_URL: string = 'http://172.20.55.180:3000';
+import { REACT_SERVER_HOST, REACT_PORT } from '../env';
+const API_URL: string = `http://${REACT_SERVER_HOST}:${REACT_PORT}`;
 
 export const api: AxiosInstance = axios.create({
   baseURL: API_URL,

@@ -4,13 +4,26 @@ import {Svg, Path, G, Defs, ClipPath} from 'react-native-svg';
 
 interface BiometricSectionProps {
   onPress: () => void;
+  activeOpacity: number;
+  accessible: boolean;
+  accessibilityLabel: string;
+  accessibilityHint: string;
 }
 
 export const BiometricSection: React.FC<BiometricSectionProps> = ({
   onPress,
+  activeOpacity,
+  accessible,
+  accessibilityLabel,
+  accessibilityHint,
 }) => {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.container}>
+    <TouchableOpacity
+      onPress={onPress}
+      style={styles.container}
+      activeOpacity={activeOpacity}
+      accessible={accessible}
+      accessibilityHint={accessibilityHint}>
       <Svg width={36} height={36} viewBox="0 0 36 36" fill="none">
         <G clipPath="url(#clip0_24_197)">
           <Path

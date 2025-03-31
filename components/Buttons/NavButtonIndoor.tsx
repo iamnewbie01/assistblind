@@ -8,7 +8,12 @@ interface NavButtonIndoorProps {
 
 const NavButtonIndoor: React.FC<NavButtonIndoorProps> = ({onPress}) => {
   return (
-    <TouchableOpacity onPress={onPress} activeOpacity={0.8}>
+    <TouchableOpacity
+      onPress={onPress}
+      activeOpacity={0.8}
+      accessible={true}
+      accessibilityLabel="Indoor Navigation"
+      accessibilityHint="Tap to start indoor navigation">
       <View style={styles.container}>
         <View style={styles.iconWrapper}>
           <BuildingIcon />

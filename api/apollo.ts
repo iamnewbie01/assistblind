@@ -2,10 +2,11 @@ import { ApolloClient, InMemoryCache, createHttpLink, from } from '@apollo/clien
 import { setContext } from '@apollo/client/link/context';
 import { onError } from '@apollo/client/link/error';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {REACT_SERVER_HOST, REACT_PORT} from '../env';
 
 // Create an http link for GraphQL requests
 const httpLink = createHttpLink({
-  uri: 'http://172.20.55.180:3000/graphql',
+  uri: `http://${REACT_SERVER_HOST}:${REACT_PORT}/graphql`,
 });
 
 // Error handling link

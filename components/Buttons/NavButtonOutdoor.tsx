@@ -8,7 +8,12 @@ interface NavButtonOutdoorProps {
 
 const NavButtonOutdoor: React.FC<NavButtonOutdoorProps> = ({onPress}) => {
   return (
-    <TouchableOpacity onPress={onPress} activeOpacity={0.8}>
+    <TouchableOpacity
+      onPress={onPress}
+      activeOpacity={0.8}
+      accessible={true}
+      accessibilityLabel="Outdoor Navigation"
+      accessibilityHint="Tap to start outdoor navigation">
       <View style={styles.container}>
         <View style={styles.iconWrapper}>
           <CameraIcon width={30} height={30} color="#FFFFFF" />

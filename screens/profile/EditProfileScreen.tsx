@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, Alert} from 'react-native';
+import {View, StyleSheet, Alert, AccessibilityInfo} from 'react-native';
 import {ProfileHeader} from '../../components/Headers/ProfileHeader';
 import {ProfileForm} from '../../components/Form/ProfileForms';
 import {ActionButtons} from '../../components/Buttons/EditActionButtons';
@@ -29,10 +29,21 @@ const ProfileEditor: React.FC<Props> = ({route, navigation}) => {
   const [updateUserProfile, {loading}] = useMutation(UPDATE_USER_PROFILE, {
     onCompleted: () => {
       Alert.alert('Success', 'Profile updated successfully');
-      navigation.goBack();
+      AccessibilityInfo.announceForAccessibility(
+        'Your Profile has been updated successfully',
+      );
+      navigation.navigate('MainMenuScreen');
     },
     onError: error => {
-      Alert.alert('Error', error.message);
+      console.log(error);
+      Alert.alert(
+        'Error',
+        'Unexpected error occured, please try again later!!',
+      );
+      AccessibilityInfo.announceForAccessibility(
+        'Unexpected error occured, please try again later!!',
+      );
+      navigation.navigate('MainMenuScreen');
     },
     refetchQueries: [{query: GET_USER_PROFILE}],
   });
@@ -58,6 +69,9 @@ const ProfileEditor: React.FC<Props> = ({route, navigation}) => {
       !formData.emergencyContact
     ) {
       Alert.alert('Validation Error', 'All fields are required');
+      AccessibilityInfo.announceForAccessibility(
+        'Please fill in all fields are required',
+      );
       return;
     }
 
@@ -72,7 +86,6 @@ const ProfileEditor: React.FC<Props> = ({route, navigation}) => {
       },
     });
     // back to profile screen
-    navigation.navigate('MainMenuScreen');
   };
 
   return (
@@ -83,13 +96,17 @@ const ProfileEditor: React.FC<Props> = ({route, navigation}) => {
             onPress={() => {
               navigation.navigate('ProfileScreen');
             }}
+            activeOpacity={0.9}
+            accessible={true}
+            accessibilityLabel="Tap to go back"
+            accessibilityHint="Tap to go back"
           />
         </View>
         <View style={styles.content}>
           <View style={styles.innerContent}>
             <ProfileHeader />
             <View style={styles.formContainer}>
-              <ProfileForm onChangeText={handleChange}/>
+              <ProfileForm onChangeText={handleChange} formData={formData} />
               <ActionButtons onCancel={handleCancel} onSave={handleSave} />
             </View>
           </View>
@@ -100,11 +117,6 @@ const ProfileEditor: React.FC<Props> = ({route, navigation}) => {
 };
 
 const styles = StyleSheet.create({
-  // container: {
-  //   marginHorizontal: 'auto',
-  //   maxWidth: 480,
-  //   width: '100%',
-  // },
   container: {
     padding: 24,
     fontFamily: 'Poppins',

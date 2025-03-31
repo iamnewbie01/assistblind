@@ -728,3 +728,132 @@ The table `public.User` does not exist in the current database. {
 2025-03-29 00:37:49 info: WebSocket endpoint: ws://172.20.55.180:3000 
 2025-03-29 00:39:07 info: Client connected: j5NxU5BwObTsPdBMAAAB 
 2025-03-29 00:46:31 info: Client connected: vU0MIaAylGp69VhFAAAD 
+2025-03-30 14:23:34 info: Database connected successfully 
+2025-03-30 14:23:34 info: Server running on port 5000 
+2025-03-30 14:23:34 info: GraphQL endpoint: http://172.20.10.112:5000/graphql 
+2025-03-30 14:23:34 info: WebSocket endpoint: ws://172.20.10.112:5000 
+2025-03-30 17:00:29 info: Database connected successfully 
+2025-03-30 17:00:30 info: Server running on port 5000 
+2025-03-30 17:00:30 info: GraphQL endpoint: http://172.20.10.112:5000/graphql 
+2025-03-30 17:00:30 info: WebSocket endpoint: ws://172.20.10.112:5000 
+2025-03-31 14:04:48 info: Database connected successfully 
+2025-03-31 14:04:48 info: Server running on port 5000 
+2025-03-31 14:04:48 info: GraphQL endpoint: http://172.20.10.112:5000/graphql 
+2025-03-31 14:04:48 info: WebSocket endpoint: ws://172.20.10.112:5000 
+2025-03-31 14:07:44 error: GraphQL error User not found {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
+}
+2025-03-31 14:08:05 error: GraphQL error User not found {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
+}
+2025-03-31 14:13:33 error: GraphQL error User not found {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
+}
+2025-03-31 14:17:27 error: GraphQL error User not found {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
+}
+2025-03-31 14:18:59 error: GraphQL error User not found {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
+}
+2025-03-31 15:02:07 info: Client connected: vuR3Kh8kMyk4WOKyAAAB 
+2025-03-31 15:04:50 info: Client connected: 6oRuYt4HY9pJIDxXAAAD 
+2025-03-31 15:04:53 info: Client connected: gHkRKcSzZrTJPqCCAAAF 
+2025-03-31 15:14:39 info: Database connected successfully 
+2025-03-31 15:14:39 info: Server running on port 5000 
+2025-03-31 15:14:39 info: GraphQL endpoint: http://172.20.10.112:5000/graphql 
+2025-03-31 15:14:39 info: WebSocket endpoint: ws://172.20.10.112:5000 
+2025-03-31 15:15:19 error: GraphQL error User not found {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
+}
+2025-03-31 15:15:43 error: GraphQL error User not found {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
+}
+2025-03-31 15:16:50 info: Client connected: kjWdat_wKDCQavSSAAAB 
+2025-03-31 15:17:22 info: Client connected: ygCsaZzyA-6JUfngAAAD 
+2025-03-31 15:36:09 info: Client connected: KsEwJGSQn_gEusc3AAAG 
+2025-03-31 16:07:55 info: Client connected: h9zul5s3a3Y1v0VkAAAI 
+2025-03-31 16:14:04 info: Client connected: c_NJw4j5LA4ahbDjAAAK 

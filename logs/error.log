@@ -360,3 +360,108 @@ The table `public.User` does not exist in the current database. {
   "extensions": {},
   "stack": "PrismaClientKnownRequestError: \nInvalid `prisma.user.findUnique()` invocation in\n/Users/amandhingra/Developer/assistblind/server/api/resolvers/auth.ts:20:46\n\n  17 const publicKey = touchId;\n  18 \n  19 // Check if user with this publicKey already exists\n→ 20 const existingUser = await prisma.user.findUnique(\nThe table `public.User` does not exist in the current database.\n    at Wn.handleRequestError (/Users/amandhingra/Developer/assistblind/node_modules/@prisma/client/runtime/library.js:121:7534)\n    at Wn.handleAndLogRequestError (/Users/amandhingra/Developer/assistblind/node_modules/@prisma/client/runtime/library.js:121:6858)\n    at Wn.request (/Users/amandhingra/Developer/assistblind/node_modules/@prisma/client/runtime/library.js:121:6565)\n    at async l (/Users/amandhingra/Developer/assistblind/node_modules/@prisma/client/runtime/library.js:130:10067)\n    at Object.registerUser (/Users/amandhingra/Developer/assistblind/server/api/resolvers/auth.ts:20:28)"
 }
+2025-03-31 14:07:44 error: GraphQL error User not found {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
+}
+2025-03-31 14:08:05 error: GraphQL error User not found {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
+}
+2025-03-31 14:13:33 error: GraphQL error User not found {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
+}
+2025-03-31 14:17:27 error: GraphQL error User not found {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
+}
+2025-03-31 14:18:59 error: GraphQL error User not found {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
+}
+2025-03-31 15:15:19 error: GraphQL error User not found {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
+}
+2025-03-31 15:15:43 error: GraphQL error User not found {
+  "path": [
+    "loginWithTouchId"
+  ],
+  "locations": [
+    {
+      "line": 2,
+      "column": 3
+    }
+  ],
+  "extensions": {
+    "code": "UNAUTHENTICATED"
+  },
+  "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
+}

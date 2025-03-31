@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react';
-import {View, Image, StyleSheet, Alert} from 'react-native';
+import {View, Image, StyleSheet, Alert, AccessibilityInfo} from 'react-native';
 import {BackButton} from '../../components/Buttons/BackButton';
 import {ContentCard} from '../../components/Card/ContentCard';
 import {StackNavigationProp} from '@react-navigation/stack';
@@ -10,8 +10,9 @@ import navigationService from '../../services/NavigationService';
 import {decode} from '@mapbox/polyline';
 import SpeechService from '../../services/SpeechService';
 import ObstacleDetectionApp from './ObstacleDetection';
+import {REACT_SERVER_HOST, REACT_PORT} from '../../env';
 
-const WS_URL = 'ws://172.20.55.180:3000';
+const WS_URL = `ws://${REACT_SERVER_HOST}:${REACT_PORT}`;
 
 type Props = {
   navigation: StackNavigationProp<
@@ -20,7 +21,6 @@ type Props = {
   >;
   route: RouteProp<RootStackParamList, 'OutdoorNavigationScreen4'>;
 };
-
 
 const NavigationContainer: React.FC<Props> = ({navigation, route}) => {
   const {locationDetails, userLocation} = route.params;
@@ -185,14 +185,23 @@ const NavigationContainer: React.FC<Props> = ({navigation, route}) => {
           'You have arrived at your destination!',
           [{text: 'OK', onPress: () => navigation.navigate('MainMenuScreen')}],
         );
+        AccessibilityInfo.announceForAccessibility(
+          'Press OK to continue to Main screen.',
+        );
       },
     });
   };
 
   // Handle navigation errors
   const handleNavigationError = (error: any) => {
-    SpeechService.speak(`Navigation error: ${error.error}`);
-    Alert.alert('Navigation Error', error.error);
+    Alert.alert(
+      'Navigation Error',
+      'Internal error occured, please try again later!!',
+    );
+    AccessibilityInfo.announceForAccessibility(
+      'An unexpected error occured, please try again later!!',
+    );
+    navigation.navigate('MainMenuScreen');
     setIsNavigating(false);
   };
 
@@ -203,6 +212,7 @@ const NavigationContainer: React.FC<Props> = ({navigation, route}) => {
 
   const handlePause = () => {
     // Handle pause action
+    SpeechService.speak(`${nextManeuver?.instruction || 'Loading...'}`);
   };
 
   const handleEnd = () => {
@@ -215,28 +225,21 @@ const NavigationContainer: React.FC<Props> = ({navigation, route}) => {
     });
   };
 
-  const handlePhonePress = () => {
-    // Handle phone action
-  };
-
-
   return (
     <View style={styles.container}>
-      {/* <Image
-        source={{
-          uri: 'https://cdn.builder.io/api/v1/image/assets/TEMP/8ab088c4759e58b1590833655f939ca6d5266dda',
-        }}
-        style={styles.backgroundImage}
-        resizeMode="cover"
-      /> */}
-      <BackButton onPress={handleBackPress} />
+      <BackButton
+        onPress={handleBackPress}
+        activeOpacity={0.9}
+        accessible={true}
+        accessibilityLabel="Tap to go back"
+        accessibilityHint="Tap to go back"
+      />
 
-      <ObstacleDetectionApp outdoor={1}/>
+      <ObstacleDetectionApp outdoor={1} />
       <View style={styles.bottomPanel}>
         <ContentCard
           onPause={handlePause}
           onEnd={handleEnd}
-          onPhonePress={handlePhonePress}
           nextInstruction={`${nextManeuver?.instruction || 'Loading...'} in ${
             Math.round(distanceToNextStep * 100) / 100
           } meters`}

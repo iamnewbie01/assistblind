@@ -37,7 +37,7 @@ function formatTime(seconds: number): string {
 
   // Create the base time string
 
-  let timeString = `${formattedMinutes} Mins ${formattedSeconds} Secs`;
+  let timeString = `${formattedMinutes} Minutes ${formattedSeconds} Seconds`;
 
   // Add milliseconds if present
   if (hours > 0) {
@@ -75,11 +75,14 @@ const OutdoorNavigation2: React.FC<Props> = ({navigation, route}) => {
 
   const handleSearch = () => {
     // Navigate to search results screen
-    navigation.navigate('OutdoorNavigationScreen2', {locations, userLocation});
+    navigation.navigate('OutdoorNavigationScreen1');
   };
 
   const handleLocationSelect = (locationDetails: Place) => {
-    navigation.navigate('OutdoorNavigationScreen4', {locationDetails, userLocation});
+    navigation.navigate('OutdoorNavigationScreen4', {
+      locationDetails,
+      userLocation,
+    });
     // You could implement navigation to this location here
   };
 
@@ -89,30 +92,20 @@ const OutdoorNavigation2: React.FC<Props> = ({navigation, route}) => {
 
       {/* Header with back button */}
       <View style={styles.header}>
-        <BackButton onPress={handleBackPress} />
-        <SearchBox onPress={handleSearch} />
+        <BackButton
+          onPress={handleBackPress}
+          activeOpacity={0.9}
+          accessible={true}
+          accessibilityLabel="Tap to go back"
+          accessibilityHint="Tap to go back"
+        />
+        <SearchBox
+          onPress={handleSearch}
+          accessible={true}
+          accessibilityLabel="Search button"
+          accessibilityHint="Tap to search again"
+        />
       </View>
-
-      {/* Map View */}
-      {/* <View style={styles.mapContainer}>
-        <MapView
-          provider={PROVIDER_GOOGLE}
-          style={styles.map}
-          initialRegion={{
-            ...userLocation,
-            latitudeDelta: 0,
-            longitudeDelta: 0,
-          }}>
-          {locations.map((location, index) => (
-            <Marker
-              key={index}
-              coordinate={location.coordinates}
-              title={location.name}
-              description={location.formatted_address}
-            />
-          ))}
-        </MapView>
-      </View> */}
 
       <View style={styles.resultsContainer}>
         <ScrollView style={styles.scrollView}>

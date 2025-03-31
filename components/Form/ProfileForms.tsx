@@ -5,16 +5,42 @@ import {BiometricSection} from '../common/BiometricSection';
 
 interface Props {
   onChangeText: (field: string, text: string) => void;
+  formData: {
+    name: string;
+    contactNumber: string;
+    emergencyName: string;
+    emergencyContact: string;
+  };
 }
 
-export const ProfileForm: React.FC<Props> = ({onChangeText}) => {
+export const ProfileForm: React.FC<Props> = ({onChangeText, formData}) => {
   return (
     <View style={styles.container}>
       <View style={styles.formFields}>
-        <FormField label="Full Name" value="Aryan M" field="fullName" onChangeText={onChangeText} />
-        <FormField label="Phone Number" value="0123556789" field="contactNumber" onChangeText={onChangeText} />
-        <FormField label="Name of Emergency Contact" value="Joke M" field="emergencyName" onChangeText={onChangeText} />
-        <FormField label="Emergency Contact" value="9876543210" field="emergencyContact" onChangeText={onChangeText} />
+        <FormField
+          label="Full Name"
+          value={formData.name}
+          field="name"
+          onChangeText={onChangeText}
+        />
+        <FormField
+          label="Phone Number"
+          value={formData.contactNumber}
+          field="contactNumber"
+          onChangeText={onChangeText}
+        />
+        <FormField
+          label="Name of Emergency Contact"
+          value={formData.emergencyName}
+          field="emergencyName"
+          onChangeText={onChangeText}
+        />
+        <FormField
+          label="Emergency Contact"
+          value={formData.emergencyContact}
+          field="emergencyContact"
+          onChangeText={onChangeText}
+        />
       </View>
       <BiometricSection />
     </View>

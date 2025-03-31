@@ -2,6 +2,7 @@ import ReactNativeBiometrics, { BiometryTypes } from 'react-native-biometrics';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useMutation } from '@apollo/client';
 import { LOGIN_WITH_TOUCH_ID, REGISTER_USER } from '../api/queries/auth';
+import { AccessibilityInfo, Alert, BackHandler } from 'react-native';
 
 // Initialize biometrics
 const rnBiometrics = new ReactNativeBiometrics();
@@ -13,7 +14,9 @@ export const handleBiometricPress = async (formData: any, setFormData: any) => {
     const { available, biometryType } = await rnBiometrics.isSensorAvailable();
     
     if (!available) {
-      alert('Biometric authentication is not available on this device');
+      Alert.alert('Authentication Error', 'Biometric authentication is not available on this device');
+      AccessibilityInfo.announceForAccessibility("Biometric authentication is not available on this device, cannot run this app");
+      BackHandler.exitApp();
       return;
     }
     
@@ -37,13 +40,15 @@ export const handleBiometricPress = async (formData: any, setFormData: any) => {
       await AsyncStorage.setItem('publicKey', publicKey);
       
       // Show success message
-      alert('Fingerprint scan successful!');
+      AccessibilityInfo.announceForAccessibility('Fingerprint Scan Successful');
+      Alert.alert('Success' ,'Fingerprint Scan Successful');
     } else {
-      alert('Biometric authentication was canceled');
+      AccessibilityInfo.announceForAccessibility('Fingerprint Scan Unsuccessful, try again');
     }
   } catch (error) {
     console.error('Biometric registration error:', error);
-    alert(`Authentication failed: ${error.message}`);
+    AccessibilityInfo.announceForAccessibility('Internal error occurred, try again later!!');
+    BackHandler.exitApp();
   }
 };
 
@@ -54,7 +59,9 @@ export const handleBiometricLogin = async (navigation: any, loginWithTouchId: an
     const { available } = await rnBiometrics.isSensorAvailable();
     
     if (!available) {
-      alert('Biometric authentication is not available on this device');
+      Alert.alert('Authentication Error', 'Biometric authentication is not available on this device');
+      AccessibilityInfo.announceForAccessibility("Biometric authentication is not available on this device, cannot run this app");
+      BackHandler.exitApp();
       return;
     }
     
@@ -62,7 +69,7 @@ export const handleBiometricLogin = async (navigation: any, loginWithTouchId: an
     const publicKey = await AsyncStorage.getItem('publicKey');
     
     if (!publicKey) {
-      alert('No registered fingerprint found. Please register first.');
+      AccessibilityInfo.announceForAccessibility("You have not registered yet, please register first");
       return;
     }
     
@@ -91,11 +98,15 @@ export const handleBiometricLogin = async (navigation: any, loginWithTouchId: an
       
       // Navigate to home screen
       navigation.navigate('MainMenuScreen');
+      return 1;
     } else {
-      alert('Authentication canceled');
+      AccessibilityInfo.announceForAccessibility("Authentication cancelled");
+      return 0;
     }
   } catch (error) {
     console.error('Biometric login error:', error);
-    alert(`Login failed: ${error.message}`);
+    AccessibilityInfo.announceForAccessibility("Unexpected error occurred, please try again later!!");
+    BackHandler.exitApp();
+    return 0;
   }
 };

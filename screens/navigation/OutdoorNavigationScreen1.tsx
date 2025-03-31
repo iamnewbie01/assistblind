@@ -1,5 +1,11 @@
 import React, {useState, useEffect, useRef} from 'react';
-import {View, StyleSheet, SafeAreaView, StatusBar} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  SafeAreaView,
+  StatusBar,
+  AccessibilityInfo,
+} from 'react-native';
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import {SearchBox} from '../../components/common/SearchBox';
 import {BackButton} from '../../components/Buttons/BackButton';
@@ -9,8 +15,8 @@ import {useVoiceRecognition} from '../../hooks/useVoiceRecognition';
 import {useSpeech} from '../../hooks/useSpeech';
 import {useGeolocation} from '../../hooks/useGeolocation';
 import {CustomButton} from '../../components/Buttons/CustomButton';
-import {api} from "../../services/Api";
-import {Place} from "../../types/types";
+import {api} from '../../services/Api';
+import {Place} from '../../types/types';
 
 type Props = {
   navigation: StackNavigationProp<
@@ -59,7 +65,7 @@ const OutdoorNavigationScreen1: React.FC<Props> = ({navigation}) => {
   useEffect(() => {
     if (location && !initialAnnouncementMade.current) {
       initialAnnouncementMade.current = true;
-      speak(
+      AccessibilityInfo.announceForAccessibility(
         'Your location has been found. Tap the search button and say where you want to go.',
       );
     }
@@ -67,24 +73,35 @@ const OutdoorNavigationScreen1: React.FC<Props> = ({navigation}) => {
 
   useEffect(() => {
     if (locationError) {
-      speak(
-        `Location error: ${locationError}. Please make sure location services are enabled.`,
+      AccessibilityInfo.announceForAccessibility(
+        'Cannot find your location. Please make sure location services are enabled.',
       );
     }
   }, [locationError]);
 
   useEffect(() => {
-    if (results.length > 0) {
-      setDestination(results[0]);
-      speak(
-        `You said: ${results[0]}. Is this correct? If not, press the search button again. Otherwise, tap the confirm button to proceed.`,
-      );
-    }
+    const fn = async () => {
+      if (results.length > 0) {
+        setDestination(results[0]);
+        const b = await AccessibilityInfo.isScreenReaderEnabled();
+        if (!b)
+          speak(
+            `You said: ${results[0]}. Is this correct? If not, press the search button again. Otherwise, tap the confirm button to proceed.`,
+          );
+        else
+          AccessibilityInfo.announceForAccessibility(
+            `You said: ${results[0]}. Is this correct? If not, press the search button again. Otherwise, tap the confirm button to proceed.`,
+          );
+      }
+    };
+    fn();
   }, [results]);
 
   useEffect(() => {
     if (error) {
-      speak(`Error: ${error}. Please try again.`);
+      AccessibilityInfo.announceForAccessibility(
+        'Unexpected error occurred. Please try again later.',
+      );
     }
   }, [error]);
 
@@ -92,6 +109,7 @@ const OutdoorNavigationScreen1: React.FC<Props> = ({navigation}) => {
     if (isListening) {
       await stopListening();
     } else {
+      await stop();
       speak('Please say your destination', {
         onDone: async () => {
           // Start listening only after speech is complete
@@ -105,14 +123,18 @@ const OutdoorNavigationScreen1: React.FC<Props> = ({navigation}) => {
   };
 
   const handleConfirmDestination = async () => {
-    try{
+    try {
       if (destination && location) {
+        await stop();
         speak(`Navigating to ${destination}`);
-        const placesDetails = await api.post<PlacesSearchResponse>('/api/places/search', {
-          query: destination,
-          latitude: location.latitude,
-          longitude: location.longitude
-        });
+        const placesDetails = await api.post<PlacesSearchResponse>(
+          '/api/places/search',
+          {
+            query: destination,
+            latitude: location.latitude,
+            longitude: location.longitude,
+          },
+        );
         console.log(placesDetails);
         const result: Place[] = placesDetails.data.places;
         navigation.navigate('OutdoorNavigationScreen2', {
@@ -123,15 +145,17 @@ const OutdoorNavigationScreen1: React.FC<Props> = ({navigation}) => {
           },
         });
       } else if (!destination) {
+        await stop();
         speak('Please set a destination first');
       } else {
+        await stop();
         speak('Waiting for your location. Please try again in a moment.');
       }
-    } catch(error){
+    } catch (error) {
       speak('Please try again later!');
       console.log(error);
-      navigation.navigate("MainMenuScreen");
-    } 
+      navigation.navigate('MainMenuScreen');
+    }
   };
 
   const handleBackPress = async () => {
@@ -177,17 +201,36 @@ const OutdoorNavigationScreen1: React.FC<Props> = ({navigation}) => {
       {/* Header with Back Button and Search */}
       <View style={styles.header}>
         {/* Using your existing BackButton component */}
-        <BackButton onPress={handleBackPress} />
+        <BackButton
+          onPress={handleBackPress}
+          activeOpacity={0.9}
+          accessible={true}
+          accessibilityLabel="Tap to go back"
+          accessibilityHint="Tap to go back"
+        />
 
         {/* Search Component */}
         <View style={styles.searchContainer}>
-          <SearchBox onPress={handleSearchPress} />
+          <SearchBox
+            onPress={handleSearchPress}
+            accessible={true}
+            accessibilityLabel="Search button"
+            accessibilityHint="Tap to search nearby places"
+          />
         </View>
       </View>
 
       <View style={styles.bottomContainer}>
         <View style={styles.confirmContainer}>
-          <CustomButton title="Confirm Destination" onPress={handleConfirmDestination} disabled={false}/>
+          <CustomButton
+            title="Confirm Destination"
+            onPress={handleConfirmDestination}
+            disabled={false}
+            activeOpacity={0.9}
+            accessible={true}
+            accessibilityLabel="Confirm Destination"
+            accessibilityHint="Tap to see the search results"
+          />
         </View>
       </View>
     </SafeAreaView>

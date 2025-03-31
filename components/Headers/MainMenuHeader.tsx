@@ -1,8 +1,6 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import {ProfileIcon} from '../icons/ProfileIcon';
-import {StackNavigationProp} from '@react-navigation/stack';
-import {RootStackParamList} from '../../App';
 
 interface HeaderProps {
   onPress: () => void;
@@ -20,7 +18,9 @@ export const Header: React.FC<HeaderProps> = ({onPress}) => {
           style={styles.profileButton}
           onPress={onPress}
           accessibilityLabel="Profile"
-          accessibilityRole="button">
+          accessibilityRole="button"
+          accessible={true}
+          accessibilityHint="To open the profile page">
           <ProfileIcon />
         </TouchableOpacity>
       </View>

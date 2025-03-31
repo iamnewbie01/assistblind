@@ -5,7 +5,6 @@ import {PhoneIcon} from '../icons/PhoneIcon';
 interface ContentCardProps {
   onPause: () => void;
   onEnd: () => void;
-  onPhonePress: () => void;
   nextInstruction: string;
   destination: string;
 }
@@ -13,32 +12,36 @@ interface ContentCardProps {
 export const ContentCard: React.FC<ContentCardProps> = ({
   onPause,
   onEnd,
-  onPhonePress,
   nextInstruction,
-  destination
+  destination,
 }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <View style={styles.routeInfo}>
           <Text style={styles.routeTitle}>{destination}</Text>
-          {/* <Text style={styles.routeSubtitle}>Walking to {destination}</Text> */}
         </View>
-        {/* <TouchableOpacity style={styles.phoneButton} onPress={onPhonePress}>
-          <PhoneIcon />
-        </TouchableOpacity> */}
       </View>
 
       <View style={styles.navigationInfo}>
         <Text style={styles.nextTurn}>Next: {nextInstruction}</Text>
-        {/* <Text style={styles.cautionText}>Caution: Uneven surface ahead</Text> */}
       </View>
 
       <View style={styles.actionButtons}>
-        <TouchableOpacity style={styles.pauseButton} onPress={onPause}>
-          <Text style={styles.pauseButtonText}>Pause</Text>
+        <TouchableOpacity
+          style={styles.pauseButton}
+          onPress={onPause}
+          accessible={true}
+          accessibilityLabel="Repeat"
+          accessibilityHint="To repeat the recent navigation instruction">
+          <Text style={styles.pauseButtonText}>Repeat</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.endButton} onPress={onEnd}>
+        <TouchableOpacity
+          style={styles.endButton}
+          onPress={onEnd}
+          accessible={true}
+          accessibilityLabel="End"
+          accessibilityHint="To end the navigation">
           <Text style={styles.endButtonText}>End</Text>
         </TouchableOpacity>
       </View>

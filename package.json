@@ -36,6 +36,7 @@
     "nativewind": "^4.1.23",
     "os": "^0.1.2",
     "path": "^0.12.7",
+    "prisma": "^6.5.0",
     "react": "19.0.0",
     "react-native": "0.78.0",
     "react-native-biometrics": "^3.0.1",

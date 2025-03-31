@@ -1,23 +1,29 @@
 import * as React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {LocationIcon} from '../icons/LocationIcon';
 
 // Define interface for component props
 interface SearchBoxProps {
   onPress: () => void;
+  accessible: boolean;
+  accessibilityLabel: string;
+  accessibilityHint: string;
 }
 
-export const SearchBox: React.FC<SearchBoxProps> = ({onPress}) => {
+export const SearchBox: React.FC<SearchBoxProps> = ({
+  onPress,
+  accessible,
+  accessibilityLabel,
+  accessibilityHint,
+}) => {
   return (
     <TouchableOpacity
       style={styles.container}
       onPress={onPress}
-      activeOpacity={0.7}>
+      activeOpacity={0.7}
+      accessible={accessible}
+      accessibilityLabel={accessibilityLabel}
+      accessibilityHint={accessibilityHint}>
       <View style={styles.locationIconWrapper}>
         <LocationIcon />
       </View>

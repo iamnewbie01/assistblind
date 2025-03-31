@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet, Alert, ActivityIndicator} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Alert,
+  ActivityIndicator,
+  AccessibilityInfo,
+} from 'react-native';
 import {BackButton} from '../../components/Buttons/BackButton';
 import {ProfileField} from '../../components/common/ProfileField';
 import {BiometricSection} from '../../components/common/BiometricSection';
@@ -26,11 +33,10 @@ const ProfileScreen: React.FC<Props> = ({navigation}) => {
 
   if (error) {
     Alert.alert('An internal error occured, please try again later!');
-    return (
-      <View>
-        <Text>An error occured, please try again later!!</Text>
-      </View>
+    AccessibilityInfo.announceForAccessibility(
+      'An internal error occured while loading your profile, please try again later!!',
     );
+    navigation.goBack();
   }
 
   const user = data.getUserProfile;
@@ -50,7 +56,13 @@ const ProfileScreen: React.FC<Props> = ({navigation}) => {
     <ScrollView>
       <View style={styles.container}>
         <View style={styles.header}>
-          <BackButton onPress={handleBackPress} />
+          <BackButton
+            onPress={handleBackPress}
+            activeOpacity={0.9}
+            accessible={true}
+            accessibilityLabel="Tap to go back"
+            accessibilityHint="Tap to go back"
+          />
         </View>
 
         <View>
@@ -59,8 +71,14 @@ const ProfileScreen: React.FC<Props> = ({navigation}) => {
           <View style={styles.formFields}>
             <ProfileField label="Full Name" value={user.name} />
             <ProfileField label="Phone Number" value={user.contactNumber} />
-            <ProfileField label="Name of Emergency Contact" value={user.emergencyName} />
-            <ProfileField label="Emergency Contact" value={user.emergencyContact} />
+            <ProfileField
+              label="Name of Emergency Contact"
+              value={user.emergencyName}
+            />
+            <ProfileField
+              label="Emergency Contact"
+              value={user.emergencyContact}
+            />
           </View>
 
           <BiometricSection />

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text, View, StyleSheet, Alert} from 'react-native';
+import {Text, View, StyleSheet, AccessibilityInfo} from 'react-native';
 import {BackButton} from '../../components/Buttons/BackButton';
 import {FormInput} from '../../components/common/FormInput';
 import {BiometricSection} from '../../components/common/BiometricSectionSetup';
@@ -33,7 +33,11 @@ const RegistrationScreen: React.FC<Props> = ({navigation}) => {
 
   const handleBiometricPressCustom = async () => {
     // Handle biometric setup
-    await handleBiometricPress(formData, setFormData);
+    try {
+      await handleBiometricPress(formData, setFormData);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const handleSubmit = async () => {
@@ -46,8 +50,7 @@ const RegistrationScreen: React.FC<Props> = ({navigation}) => {
         !formData.emergencyContact ||
         !formData.touchId
       ) {
-        Alert.alert(
-          'Error',
+        AccessibilityInfo.announceForAccessibility(
           'Please fill in all fields and scan your fingerprint',
         );
         return;
@@ -60,20 +63,24 @@ const RegistrationScreen: React.FC<Props> = ({navigation}) => {
 
       // Store the authentication token
       await AsyncStorage.setItem('token', data.registerUser.token);
-
+      navigation.navigate('LoginScreen');
+      AccessibilityInfo.announceForAccessibility('Registration successful');
       // Show success message
-      Alert.alert('Success', 'Registration successful!', [
-        {text: 'OK', onPress: () => navigation.navigate('LoginScreen')},
-      ]);
     } catch (error) {
-      Alert.alert('Error', `Registration failed: ${error.message}`);
+      console.log(error);
+      AccessibilityInfo.announceForAccessibility(
+        'Registration unsuccessful due to internal error, please try again later!',
+      );
     }
   };
 
   return (
     <View style={styles.container}>
       <View>
-        <BackButton onPress={handleBackPress} />
+        <BackButton onPress={handleBackPress} activeOpacity={0.9}
+          accessible={true}
+          accessibilityLabel="Back"
+          accessibilityHint="Tap to go back"/>
       </View>
       <ScrollView style={styles.content}>
         <View style={styles.titleContainer}>
@@ -91,7 +98,9 @@ const RegistrationScreen: React.FC<Props> = ({navigation}) => {
             label="Phone Number"
             placeholder="Enter phone number"
             value={formData.contactNumber}
-            onChangeText={text => setFormData({...formData, contactNumber: text})}
+            onChangeText={text =>
+              setFormData({...formData, contactNumber: text})
+            }
           />
           <FormInput
             label="Name of Emergency Contact"
@@ -111,9 +120,23 @@ const RegistrationScreen: React.FC<Props> = ({navigation}) => {
           />
         </View>
 
-        <BiometricSection onPress={handleBiometricPressCustom} />
+        <BiometricSection
+          onPress={handleBiometricPressCustom}
+          activeOpacity={0.9}
+          accessible={true}
+          accessibilityLabel="Biometric scan"
+          accessibilityHint="To give Biometric scan"
+        />
 
-        <CustomButton title="Complete Registration" onPress={handleSubmit} disabled={loading}/>
+        <CustomButton
+          title="Complete Registration"
+          onPress={handleSubmit}
+          disabled={loading}
+          activeOpacity={0.9}
+          accessible={true}
+          accessibilityLabel="Complete Registration"
+          accessibilityHint="Completes the process"
+        />
       </ScrollView>
     </View>
   );

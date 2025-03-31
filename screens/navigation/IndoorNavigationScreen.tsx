@@ -1,16 +1,16 @@
 import React from 'react';
-import { View, Image, StyleSheet } from 'react-native';
-import { NavigationCard } from '../../components/Card/NavigationCard';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../../App';
-import ObstacleDetectionApp from "./ObstacleDetection.tsx";
-import { BackButton } from '../../components/Buttons/BackButton.tsx';
+import {View, Image, StyleSheet} from 'react-native';
+import {NavigationCard} from '../../components/Card/NavigationCard';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from '../../App';
+import ObstacleDetectionApp from './ObstacleDetection.tsx';
+import {BackButton} from '../../components/Buttons/BackButton.tsx';
 
 type Props = {
   navigation: StackNavigationProp<RootStackParamList>;
 };
 
-const IndoorNavigation: React.FC<Props> = ({ navigation }) => {
+const IndoorNavigation: React.FC<Props> = ({navigation}) => {
   const handleEndNavigation = () => {
     console.log('Navigation ended');
     navigation.navigate('MainMenuScreen');
@@ -19,8 +19,14 @@ const IndoorNavigation: React.FC<Props> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.obstacleDetectionContainer}>
-        <ObstacleDetectionApp outdoor={0}/>
-        <BackButton onPress={handleEndNavigation} />
+        <ObstacleDetectionApp outdoor={0} />
+        <BackButton
+          onPress={handleEndNavigation}
+          activeOpacity={0.9}
+          accessible={true}
+          accessibilityLabel="Tap to go back"
+          accessibilityHint="Tap to go back"
+        />
       </View>
     </View>
   );

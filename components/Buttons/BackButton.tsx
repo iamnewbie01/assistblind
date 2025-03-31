@@ -4,14 +4,27 @@ import {BackIcon} from '../icons/BackIcon';
 
 interface BackButtonProps {
   onPress: () => void;
+  activeOpacity: number;
+  accessible: boolean;
+  accessibilityLabel: string;
+  accessibilityHint: string;
 }
 
-export const BackButton: React.FC<BackButtonProps> = ({onPress}) => {
+export const BackButton: React.FC<BackButtonProps> = ({
+  onPress,
+  activeOpacity,
+  accessible,
+  accessibilityLabel,
+  accessibilityHint,
+}) => {
   return (
     <TouchableOpacity
       style={styles.container}
       onPress={onPress}
-      activeOpacity={0.7}>
+      activeOpacity={activeOpacity}
+      accessible={accessible}
+      accessibilityLabel={accessibilityLabel}
+      accessibilityHint={accessibilityHint}>
       <BackIcon />
     </TouchableOpacity>
   );
