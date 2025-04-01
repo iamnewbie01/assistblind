@@ -99,12 +99,12 @@ const OutdoorNavigation2: React.FC<Props> = ({navigation, route}) => {
           accessibilityLabel="Tap to go back"
           accessibilityHint="Tap to go back"
         />
-        <SearchBox
+        {/* <SearchBox
           onPress={handleSearch}
           accessible={true}
           accessibilityLabel="Search button"
           accessibilityHint="Tap to search again"
-        />
+        /> */}
       </View>
 
       <View style={styles.resultsContainer}>

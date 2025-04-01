@@ -465,3 +465,9 @@ The table `public.User` does not exist in the current database. {
   },
   "stack": "AuthenticationError: User not found\n    at Object.loginWithTouchId (/Users/ram/Desktop/ExploratoryProject/assistblind/server/api/resolvers/auth.ts:56:15)"
 }
+2025-03-31 18:11:00 error: Database connection failed User `aryan` was denied access on the database `assistblind.public` {
+  "clientVersion": "6.5.0",
+  "errorCode": "P1010",
+  "name": "PrismaClientInitializationError",
+  "stack": "PrismaClientInitializationError: User `aryan` was denied access on the database `assistblind.public`\n    at t (/Users/amandhingra/Developer/assistblind/node_modules/@prisma/client/runtime/library.js:112:2473)\n    at connectDatabase (/Users/amandhingra/Developer/assistblind/server/config/database.ts:8:5)\n    at startServer (/Users/amandhingra/Developer/assistblind/server/config/server.ts:42:5)"
+}

@@ -857,3 +857,30 @@ The table `public.User` does not exist in the current database. {
 2025-03-31 15:36:09 info: Client connected: KsEwJGSQn_gEusc3AAAG 
 2025-03-31 16:07:55 info: Client connected: h9zul5s3a3Y1v0VkAAAI 
 2025-03-31 16:14:04 info: Client connected: c_NJw4j5LA4ahbDjAAAK 
+2025-03-31 18:11:00 error: Database connection failed User `aryan` was denied access on the database `assistblind.public` {
+  "clientVersion": "6.5.0",
+  "errorCode": "P1010",
+  "name": "PrismaClientInitializationError",
+  "stack": "PrismaClientInitializationError: User `aryan` was denied access on the database `assistblind.public`\n    at t (/Users/amandhingra/Developer/assistblind/node_modules/@prisma/client/runtime/library.js:112:2473)\n    at connectDatabase (/Users/amandhingra/Developer/assistblind/server/config/database.ts:8:5)\n    at startServer (/Users/amandhingra/Developer/assistblind/server/config/server.ts:42:5)"
+}
+2025-03-31 18:14:18 info: Database connected successfully 
+2025-03-31 18:14:18 info: Server running on port 3000 
+2025-03-31 18:14:18 info: GraphQL endpoint: http://172.20.111.138:3000/graphql 
+2025-03-31 18:14:18 info: WebSocket endpoint: ws://172.20.111.138:3000 
+2025-03-31 18:29:21 info: Client connected: etRMPNP53U3GtUL8AAAB 
+2025-03-31 18:50:23 info: Client connected: kAzePabJQGV-l7R3AAAD 
+2025-03-31 19:00:20 info: Client connected: 7WvXLxD4yMwL186nAAAF 
+2025-03-31 19:09:56 info: Client connected: mtPDU3gU8_beczdUAAAH 
+2025-03-31 19:57:06 info: Client connected: kGPR1IW9vFGvRBNmAAAJ 
+2025-03-31 19:59:54 info: Client connected: c0DOPjW3lpSGm6B6AAAL 
+2025-03-31 20:01:11 info: Client connected: hfFsUr2B5O6arBMAAAAN 
+2025-04-01 05:57:59 info: Database connected successfully 
+2025-04-01 05:57:59 info: Server running on port 3000 
+2025-04-01 05:57:59 info: GraphQL endpoint: http://172.20.111.138:3000/graphql 
+2025-04-01 05:57:59 info: WebSocket endpoint: ws://172.20.111.138:3000 
+2025-04-01 05:59:59 info: Client connected: 7el5A-JHKHdVvC5OAAAB 
+2025-04-01 10:56:32 info: Database connected successfully 
+2025-04-01 10:56:32 info: Server running on port 3000 
+2025-04-01 10:56:32 info: GraphQL endpoint: http://172.20.111.138:3000/graphql 
+2025-04-01 10:56:32 info: WebSocket endpoint: ws://172.20.111.138:3000 
+2025-04-01 11:00:08 info: Client connected: 4XYfnEnQFCmyEeYBAAAB 

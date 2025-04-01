@@ -1,6 +1,7 @@
 import * as React from 'react';
-import {TouchableOpacity, StyleSheet} from 'react-native';
+import {TouchableOpacity, StyleSheet , Dimensions} from 'react-native';
 import {BackIcon} from '../icons/BackIcon';
+
 
 interface BackButtonProps {
   onPress: () => void;

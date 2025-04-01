@@ -16,6 +16,9 @@ import {Place} from './types/types';
 import {ApolloProvider} from '@apollo/client';
 import client from './api/apollo';
 import {UserProfile} from './api/queries/profile';
+import { LogBox } from 'react-native';
+
+LogBox.ignoreAllLogs();
 
 // Define the navigation stack types
 export type RootStackParamList = {

@@ -16,6 +16,8 @@ import axios from 'axios';
 import ImageResizer from 'react-native-image-resizer';
 import {Svg, Rect, Text as SvgText} from 'react-native-svg';
 import Tts from 'react-native-tts';
+import { OBSTACLE_DETECTION_API } from '../../env';
+import { BackHandler } from 'react-native';
 
 const ObstacleDetectionApp = ({outdoor}) => {
   return <ObstacleDetection outdoor={outdoor} />;
@@ -109,14 +111,6 @@ const ObstacleDetection = ({outdoor}) => {
     Tts.addEventListener('tts-finish', () => setIsSpeaking(false));
     Tts.addEventListener('tts-cancel', () => setIsSpeaking(false));
 
-    // Initial instruction
-    if (outdoor == 0) {
-      Tts.speak('Tap anywhere on screen to start obstacle detection');
-    } else {
-      setTimeout(() => {
-        Tts.speak('Tap anywhere on screen to start obstacle detection');
-      }, 1000);
-    }
 
     return () => {
       if (RealTimeDetectionTimer.current) {
@@ -128,6 +122,8 @@ const ObstacleDetection = ({outdoor}) => {
       Tts.removeAllListeners('tts-cancel');
     };
   }, []);
+
+  
 
   const determineQuadrant = (
     x: number,
@@ -226,7 +222,7 @@ const ObstacleDetection = ({outdoor}) => {
         'https://detect.roboflow.com/obstacles-for-blind/3',
         imageData,
         {
-          params: {api_key: 'sJeTm3O7K8cx54VbZSPK'},
+          params: {api_key: OBSTACLE_DETECTION_API},
           headers: {'Content-Type': 'application/x-www-form-urlencoded'},
         },
       );
