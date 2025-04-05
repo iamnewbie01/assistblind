@@ -1,3 +1,0 @@
-export const REACT_SERVER_HOST='172.20.111.138';
-export const REACT_PORT='3000';
-export const OBSTACLE_DETECTION_API='sJeTm3O7K8cx54VbZSPK';
